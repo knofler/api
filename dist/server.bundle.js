@@ -73,25 +73,25 @@ module.exports = require("mongoose");
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("express");
+module.exports = require("babel-runtime/regenerator");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = require("babel-runtime/helpers/asyncToGenerator");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/regenerator");
+module.exports = require("express");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/asyncToGenerator");
+module.exports = require("react");
 
 /***/ }),
 /* 5 */
@@ -715,7 +715,7 @@ var _jsx2 = __webpack_require__(5);
 
 var _jsx3 = _interopRequireDefault(_jsx2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -771,7 +771,7 @@ var _inherits2 = __webpack_require__(26);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -889,7 +889,7 @@ var _jsx3 = _interopRequireDefault(_jsx2);
 
 exports.PostDetailPage = PostDetailPage;
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1956,11 +1956,19 @@ var _stringify = __webpack_require__(13);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
+var _regenerator = __webpack_require__(1);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = __webpack_require__(2);
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
 var _cors = __webpack_require__(48);
 
 var _cors2 = _interopRequireDefault(_cors);
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -1990,7 +1998,7 @@ var _store = __webpack_require__(55);
 
 var _reactRedux = __webpack_require__(12);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2106,14 +2114,32 @@ var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Initialize the Express App
+// import AWS from 'aws-sdk';
 /* eslint-disable no-console */
+var AWS = __webpack_require__(129);
+// console.log('AWS is :', AWS);
+// const credentials = new AWS.SharedIniFileCredentials({
+//   // profile: 'live2vod',
+//   profile: 'dnops_sandbox',
+// });
+// AWS.config.credentials = credentials;
+// AWS.config.update({ region: 'ap-southeast-2' });
+
+// Create an S3 client
+var s3 = new AWS.S3();
+
+// Initialize the Express App
 var app = new _express2.default();
-var server = __webpack_require__(129).createServer(app);
-var client = __webpack_require__(130).listen(server);
+var server = __webpack_require__(130).createServer(app);
+var client = __webpack_require__(131).listen(server);
 
 // console.log('socketIO is :', socketIO);
 (0, _socketioServer.io)(client);
+
+// Load the SDK and UUID
+// const AWS = require('aws-sdk');
+// const uuid = require('node-uuid');
+
 
 // Set Development modes checks
 var isDevMode = process.env.NODE_ENV === 'development' || false;
@@ -2125,11 +2151,11 @@ if (isDevMode) {
   // eslint-disable-next-line global-require
   var webpack = __webpack_require__(46);
   // eslint-disable-next-line global-require
-  var config = __webpack_require__(131);
+  var config = __webpack_require__(132);
   // eslint-disable-next-line global-require
-  var webpackDevMiddleware = __webpack_require__(135);
+  var webpackDevMiddleware = __webpack_require__(136);
   // eslint-disable-next-line global-require
-  var webpackHotMiddleware = __webpack_require__(136);
+  var webpackHotMiddleware = __webpack_require__(137);
   var compiler = webpack(config);
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
@@ -2204,6 +2230,49 @@ app.use('/api', _routes12.default);
 app.use('/api', _routes18.default);
 app.use('/api', _routes20.default);
 app.use('/api', _routes22.default);
+
+// MEDIA LIVE API CALL Handling
+
+app.use('/api/create/channel', function () {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
+    var params;
+    return _regenerator2.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            console.log('req in media/create is :', req.params);
+            params = {};
+            _context.prev = 2;
+            _context.next = 5;
+            return s3.listBuckets(params, function (err, data) {
+              if (err) console.log(err, err.stack); // an error occurred
+              else console.log(data); // successful response
+              return res.status(200).send({
+                message: data
+              });
+            });
+
+          case 5:
+            _context.next = 10;
+            break;
+
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context['catch'](2);
+            return _context.abrupt('return', res.status(400).end(_context.t0));
+
+          case 10:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, undefined, [[2, 7]]);
+  }));
+
+  return function (_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}());
 
 // Render Initial HTML
 var renderFullPage = function renderFullPage(html, initialState) {
@@ -2298,7 +2367,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.IntlWrapper = IntlWrapper;
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2353,7 +2422,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // When the user connects.. perform this
 function onConnect(socket) {
   // When the client emits 'info', this listens and executes
-  console.log('Onconnect function in socket.io executed');
+  // console.log('Onconnect function in socket.io executed');
   socket.on('info', function (data) {
     console.info('[%s] %s', socket.address, (0, _stringify2.default)(data, null, 2));
   });
@@ -2437,7 +2506,7 @@ function onRemove(socket, doc, cb) {
 }
 
 function register(socket) {
-  console.log('Order imported in socket is :', _model2.default.schema.post);
+  // console.log('Order imported in socket is :', Order.schema.post);
   console.log('Register function inside Order API Model has been executed');
   _model2.default.schema.post('save', function (doc) {
     return onSave(socket, doc);
@@ -2831,7 +2900,7 @@ var _jsx2 = __webpack_require__(5);
 
 var _jsx3 = _interopRequireDefault(_jsx2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2917,7 +2986,7 @@ var _inherits2 = __webpack_require__(26);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3044,7 +3113,7 @@ var _jsx3 = _interopRequireDefault(_jsx2);
 
 exports.Header = Header;
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3134,7 +3203,7 @@ var _jsx3 = _interopRequireDefault(_jsx2);
 
 exports.Footer = Footer;
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3189,7 +3258,7 @@ var _jsx2 = __webpack_require__(5);
 
 var _jsx3 = _interopRequireDefault(_jsx2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3234,7 +3303,7 @@ var _jsx2 = __webpack_require__(5);
 
 var _jsx3 = _interopRequireDefault(_jsx2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3330,7 +3399,7 @@ var _inherits2 = __webpack_require__(26);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3488,7 +3557,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _post = __webpack_require__(87);
 
@@ -3860,7 +3929,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _user = __webpack_require__(95);
 
@@ -3883,11 +3952,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updateMe = exports.me = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -3958,11 +4027,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.protect = exports.signin = exports.signup = exports.verifyToken = exports.newToken = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -4189,7 +4258,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(100);
 
@@ -4234,11 +4303,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteChef = exports.updateOneChef = exports.getChefById = exports.addChef = exports.getChef = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -4660,7 +4729,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(103);
 
@@ -4705,11 +4774,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteFood = exports.updateOneFood = exports.getFoodById = exports.addFood = exports.getFood = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -6173,7 +6242,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(106);
 
@@ -6218,11 +6287,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteShopcart = exports.updateOneShopcart = exports.getShopcartById = exports.addShopcart = exports.getShopcart = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -6605,7 +6674,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(109);
 
@@ -6650,11 +6719,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteLocation = exports.updateOneLocation = exports.getLocationById = exports.addLocation = exports.getLocation = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -6975,7 +7044,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(112);
 
@@ -7020,11 +7089,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteOrder = exports.updateOneOrder = exports.getOrderById = exports.addOrder = exports.getOrder = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -7385,7 +7454,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(115);
 
@@ -7430,11 +7499,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deletePencil = exports.updateOnePencil = exports.getPencilById = exports.addPencil = exports.getPencil = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -7786,7 +7855,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(118);
 
@@ -7827,15 +7896,15 @@ exports.default = BookRouter;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.deleteBook = exports.updateOneBook = exports.getBookById = exports.addBook = exports.getBook = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -7853,40 +7922,40 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 */
 
 var getBook = exports.getBook = function () {
-    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
-        var doc;
-        return _regenerator2.default.wrap(function _callee$(_context) {
-            while (1) {
-                switch (_context.prev = _context.next) {
-                    case 0:
-                        _context.prev = 0;
-                        _context.next = 3;
-                        return _model2.default.find({
-                            // {createdBy: req.user._id}
-                        }).sort('-dateAdded').lean().exec();
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
+    var doc;
+    return _regenerator2.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return _model2.default.find({
+              // {createdBy: req.user._id}
+            }).sort('-dateAdded').lean().exec();
 
-                    case 3:
-                        doc = _context.sent;
-                        return _context.abrupt('return', res.status(200).json({ data: doc }));
+          case 3:
+            doc = _context.sent;
+            return _context.abrupt('return', res.status(200).json({ data: doc }));
 
-                    case 7:
-                        _context.prev = 7;
-                        _context.t0 = _context['catch'](0);
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context['catch'](0);
 
-                        console.error(_context.t0);
-                        return _context.abrupt('return', res.status(400).send(_context.t0));
+            console.error(_context.t0);
+            return _context.abrupt('return', res.status(400).send(_context.t0));
 
-                    case 11:
-                    case 'end':
-                        return _context.stop();
-                }
-            }
-        }, _callee, this, [[0, 7]]);
-    }));
+          case 11:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this, [[0, 7]]);
+  }));
 
-    return function getBook(_x, _x2) {
-        return _ref.apply(this, arguments);
-    };
+  return function getBook(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
 }();
 
 /**
@@ -7897,58 +7966,58 @@ var getBook = exports.getBook = function () {
 */
 
 var addBook = exports.addBook = function () {
-    var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
-        var sanitizedBook, book;
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
-            while (1) {
-                switch (_context2.prev = _context2.next) {
-                    case 0:
-                        _context2.prev = 0;
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
+    var sanitizedBook, book;
+    return _regenerator2.default.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
 
-                        // Save model data for Sanitization
-                        // const createdBy = req.user._id
-                        // console.log('createdBy', createdBy);
-                        sanitizedBook = new _model2.default(req.body);
+            // Save model data for Sanitization
+            // const createdBy = req.user._id
+            // console.log('createdBy', createdBy);
+            sanitizedBook = new _model2.default(req.body);
 
-                        // Let's sanitize inputs
+            // Let's sanitize inputs
 
-                        sanitizedBook.item = (0, _sanitizeHtml2.default)(sanitizedBook.item);
-                        // sanitizedBook.info = sanitizeHtml(sanitizedBook.info); --}}
-                        // sanitizedBook.created_by = sanitizeHtml(sanitizedBook.created_by);
-                        // sanitizedBook.created_at = sanitizeHtml(sanitizedBook.created_at);
+            sanitizedBook.item = (0, _sanitizeHtml2.default)(sanitizedBook.item);
+            // sanitizedBook.info = sanitizeHtml(sanitizedBook.info); --}}
+            // sanitizedBook.created_by = sanitizeHtml(sanitizedBook.created_by);
+            // sanitizedBook.created_at = sanitizeHtml(sanitizedBook.created_at);
 
-                        // Add slug data for specific field
-                        sanitizedBook.slug = (0, _limax2.default)(sanitizedBook.item.toLowerCase(), { lowercase: true });
+            // Add slug data for specific field
+            sanitizedBook.slug = (0, _limax2.default)(sanitizedBook.item.toLowerCase(), { lowercase: true });
 
-                        // Add cuid for the model
-                        sanitizedBook.cuid = (0, _cuid2.default)();
+            // Add cuid for the model
+            sanitizedBook.cuid = (0, _cuid2.default)();
 
-                        // Make asynchronous call to save the model to Database
-                        _context2.next = 7;
-                        return _model2.default.create(sanitizedBook);
+            // Make asynchronous call to save the model to Database
+            _context2.next = 7;
+            return _model2.default.create(sanitizedBook);
 
-                    case 7:
-                        book = _context2.sent;
-                        return _context2.abrupt('return', res.status(201).json(book.toJSON()));
+          case 7:
+            book = _context2.sent;
+            return _context2.abrupt('return', res.status(201).json(book.toJSON()));
 
-                    case 11:
-                        _context2.prev = 11;
-                        _context2.t0 = _context2['catch'](0);
+          case 11:
+            _context2.prev = 11;
+            _context2.t0 = _context2['catch'](0);
 
-                        console.log(_context2.t0);
-                        return _context2.abrupt('return', res.status(400).send(_context2.t0));
+            console.log(_context2.t0);
+            return _context2.abrupt('return', res.status(400).send(_context2.t0));
 
-                    case 15:
-                    case 'end':
-                        return _context2.stop();
-                }
-            }
-        }, _callee2, this, [[0, 11]]);
-    }));
+          case 15:
+          case 'end':
+            return _context2.stop();
+        }
+      }
+    }, _callee2, this, [[0, 11]]);
+  }));
 
-    return function addBook(_x3, _x4) {
-        return _ref2.apply(this, arguments);
-    };
+  return function addBook(_x3, _x4) {
+    return _ref2.apply(this, arguments);
+  };
 }();
 
 /**
@@ -7959,51 +8028,51 @@ var addBook = exports.addBook = function () {
 */
 
 var getBookById = exports.getBookById = function () {
-    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(req, res) {
-        var doc;
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
-            while (1) {
-                switch (_context3.prev = _context3.next) {
-                    case 0:
-                        _context3.prev = 0;
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(req, res) {
+    var doc;
+    return _regenerator2.default.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.prev = 0;
 
-                        console.log("cuid is :", req.params.cuid);
-                        _context3.next = 4;
-                        return _model2.default.findOne({
-                            // createdBy: req.user._id,
-                            cuid: req.params.cuid
-                            // _id: req.params.id
-                        }).lean().exec();
+            console.log('cuid is :', req.params.cuid);
+            _context3.next = 4;
+            return _model2.default.findOne({
+              // createdBy: req.user._id,
+              cuid: req.params.cuid
+              // _id: req.params.id
+            }).lean().exec();
 
-                    case 4:
-                        doc = _context3.sent;
+          case 4:
+            doc = _context3.sent;
 
-                        if (doc) {
-                            _context3.next = 7;
-                            break;
-                        }
-
-                        return _context3.abrupt('return', res.status(400).end());
-
-                    case 7:
-                        return _context3.abrupt('return', res.status(200).json({ data: doc }));
-
-                    case 10:
-                        _context3.prev = 10;
-                        _context3.t0 = _context3['catch'](0);
-                        return _context3.abrupt('return', res.status(400).send(_context3.t0));
-
-                    case 13:
-                    case 'end':
-                        return _context3.stop();
-                }
+            if (doc) {
+              _context3.next = 7;
+              break;
             }
-        }, _callee3, this, [[0, 10]]);
-    }));
 
-    return function getBookById(_x5, _x6) {
-        return _ref3.apply(this, arguments);
-    };
+            return _context3.abrupt('return', res.status(400).end());
+
+          case 7:
+            return _context3.abrupt('return', res.status(200).json({ data: doc }));
+
+          case 10:
+            _context3.prev = 10;
+            _context3.t0 = _context3['catch'](0);
+            return _context3.abrupt('return', res.status(400).send(_context3.t0));
+
+          case 13:
+          case 'end':
+            return _context3.stop();
+        }
+      }
+    }, _callee3, this, [[0, 10]]);
+  }));
+
+  return function getBookById(_x5, _x6) {
+    return _ref3.apply(this, arguments);
+  };
 }();
 
 /**
@@ -8014,51 +8083,51 @@ var getBookById = exports.getBookById = function () {
 */
 
 var updateOneBook = exports.updateOneBook = function () {
-    var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
-        var updatedDoc;
-        return _regenerator2.default.wrap(function _callee4$(_context4) {
-            while (1) {
-                switch (_context4.prev = _context4.next) {
-                    case 0:
-                        _context4.prev = 0;
-                        _context4.next = 3;
-                        return _model2.default.findOneAndUpdate({
-                            // createdBy: req.user._id,
-                            cuid: req.params.cuid
-                            // _id: req.params.id
-                        }, req.body, { new: true }).lean().exec();
+  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
+    var updatedDoc;
+    return _regenerator2.default.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.prev = 0;
+            _context4.next = 3;
+            return _model2.default.findOneAndUpdate({
+              // createdBy: req.user._id,
+              cuid: req.params.cuid
+              // _id: req.params.id
+            }, req.body, { new: true }).lean().exec();
 
-                    case 3:
-                        updatedDoc = _context4.sent;
+          case 3:
+            updatedDoc = _context4.sent;
 
-                        if (updatedDoc) {
-                            _context4.next = 6;
-                            break;
-                        }
-
-                        return _context4.abrupt('return', res.status(400).end());
-
-                    case 6:
-                        return _context4.abrupt('return', res.status(200).json({ data: updatedDoc }));
-
-                    case 9:
-                        _context4.prev = 9;
-                        _context4.t0 = _context4['catch'](0);
-
-                        console.error(_context4.t0);
-                        return _context4.abrupt('return', res.status(400).send(_context4.t0));
-
-                    case 13:
-                    case 'end':
-                        return _context4.stop();
-                }
+            if (updatedDoc) {
+              _context4.next = 6;
+              break;
             }
-        }, _callee4, this, [[0, 9]]);
-    }));
 
-    return function updateOneBook(_x7, _x8) {
-        return _ref4.apply(this, arguments);
-    };
+            return _context4.abrupt('return', res.status(400).end());
+
+          case 6:
+            return _context4.abrupt('return', res.status(200).json({ data: updatedDoc }));
+
+          case 9:
+            _context4.prev = 9;
+            _context4.t0 = _context4['catch'](0);
+
+            console.error(_context4.t0);
+            return _context4.abrupt('return', res.status(400).send(_context4.t0));
+
+          case 13:
+          case 'end':
+            return _context4.stop();
+        }
+      }
+    }, _callee4, this, [[0, 9]]);
+  }));
+
+  return function updateOneBook(_x7, _x8) {
+    return _ref4.apply(this, arguments);
+  };
 }();
 
 /**
@@ -8069,51 +8138,51 @@ var updateOneBook = exports.updateOneBook = function () {
 */
 
 var deleteBook = exports.deleteBook = function () {
-    var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
-        var removed;
-        return _regenerator2.default.wrap(function _callee5$(_context5) {
-            while (1) {
-                switch (_context5.prev = _context5.next) {
-                    case 0:
-                        _context5.prev = 0;
-                        _context5.next = 3;
-                        return _model2.default.findOneAndRemove({
-                            // createdBy:req.user._id,
-                            cuid: req.params.cuid
-                            // _id:req.params.id,
-                        });
+  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
+    var removed;
+    return _regenerator2.default.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return _model2.default.findOneAndRemove({
+              // createdBy:req.user._id,
+              cuid: req.params.cuid
+              // _id:req.params.id,
+            });
 
-                    case 3:
-                        removed = _context5.sent;
+          case 3:
+            removed = _context5.sent;
 
-                        if (removed) {
-                            _context5.next = 6;
-                            break;
-                        }
-
-                        return _context5.abrupt('return', res.status(400).end());
-
-                    case 6:
-                        return _context5.abrupt('return', res.status(200).json({ data: removed }));
-
-                    case 9:
-                        _context5.prev = 9;
-                        _context5.t0 = _context5['catch'](0);
-
-                        console.error(_context5.t0);
-                        return _context5.abrupt('return', res.status(400).send(_context5.t0));
-
-                    case 13:
-                    case 'end':
-                        return _context5.stop();
-                }
+            if (removed) {
+              _context5.next = 6;
+              break;
             }
-        }, _callee5, this, [[0, 9]]);
-    }));
 
-    return function deleteBook(_x9, _x10) {
-        return _ref5.apply(this, arguments);
-    };
+            return _context5.abrupt('return', res.status(400).end());
+
+          case 6:
+            return _context5.abrupt('return', res.status(200).json({ data: removed }));
+
+          case 9:
+            _context5.prev = 9;
+            _context5.t0 = _context5['catch'](0);
+
+            console.error(_context5.t0);
+            return _context5.abrupt('return', res.status(400).send(_context5.t0));
+
+          case 13:
+          case 'end':
+            return _context5.stop();
+        }
+      }
+    }, _callee5, this, [[0, 9]]);
+  }));
+
+  return function deleteBook(_x9, _x10) {
+    return _ref5.apply(this, arguments);
+  };
 }();
 
 var _model = __webpack_require__(42);
@@ -8187,7 +8256,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(121);
 
@@ -8232,11 +8301,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteShipment = exports.updateOneShipment = exports.getShipmentById = exports.addShipment = exports.getShipment = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -8635,7 +8704,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(124);
 
@@ -8680,11 +8749,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteSearch = exports.updateOneSearch = exports.getSearchById = exports.addSearch = exports.getSearch = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -9036,7 +9105,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(3);
 
 var _controller = __webpack_require__(127);
 
@@ -9081,11 +9150,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteSocial = exports.updateOneSocial = exports.getSocialById = exports.addSocial = exports.getSocial = undefined;
 
-var _regenerator = __webpack_require__(3);
+var _regenerator = __webpack_require__(1);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(4);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -9430,16 +9499,22 @@ function socialData() {
 /* 129 */
 /***/ (function(module, exports) {
 
-module.exports = require("http");
+module.exports = require("aws-sdk");
 
 /***/ }),
 /* 130 */
 /***/ (function(module, exports) {
 
-module.exports = require("socket.io");
+module.exports = require("http");
 
 /***/ }),
 /* 131 */
+/***/ (function(module, exports) {
+
+module.exports = require("socket.io");
+
+/***/ }),
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9452,9 +9527,9 @@ var _stringify2 = _interopRequireDefault(_stringify);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var webpack = __webpack_require__(46);
-var cssnext = __webpack_require__(132);
-var postcssFocus = __webpack_require__(133);
-var postcssReporter = __webpack_require__(134);
+var cssnext = __webpack_require__(133);
+var postcssFocus = __webpack_require__(134);
+var postcssReporter = __webpack_require__(135);
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -9534,31 +9609,31 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-cssnext");
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-focus");
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-reporter");
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 module.exports = require("webpack-dev-middleware");
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 module.exports = require("webpack-hot-middleware");
