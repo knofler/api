@@ -2354,6 +2354,9 @@ app.use('/api', _routes4.default);
 app.use('/api', _routes18.default);
 app.use('/api', _routes20.default);
 
+app.use('/api', _routes14.default);
+app.use('/api', _routes16.default);
+
 app.use('/api', _routes8.default);
 app.use('/api', _routes10.default);
 // app.use('/api', RecipeRouter);

@@ -169,6 +169,9 @@ app.use('/api', ChefRouter);
 app.use('/api', PencilRouter);
 app.use('/api', BookRouter);
 
+app.use('/api', ChannelRouter);
+app.use('/api', InputRouter);
+
 app.use('/api', ShopcartRouter);
 app.use('/api', LocationRouter);
 // app.use('/api', RecipeRouter);
