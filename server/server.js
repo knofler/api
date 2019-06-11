@@ -93,6 +93,12 @@ import locationData from './api/Location/dummyData';
 import OrderRouter from './api/Order/routes';
 import orderData from './api/Order/dummyData';
 
+import ChannelRouter from './api/Channel/routes';
+import channelData from './api/Channel/dummyData';
+
+import InputRouter from './api/Input/routes';
+import inputData from './api/Input/dummyData';
+
 import PencilRouter from './api/Pencil/routes';
 import pencilData from './api/Pencil/dummyData';
 
@@ -127,6 +133,8 @@ if (process.env.NODE_ENV !== 'test') {
       foodData();
       locationData();
       orderData();
+      channelData();
+      inputData();
       pencilData();
       postData();
       // recipeData();
