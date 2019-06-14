@@ -1,3 +1,6 @@
+/* eslint-disable quote-props */
+/* eslint-disable no-multi-spaces */
+/* eslint-disable comma-dangle */
 /* eslint-disable no-console */
 import cors from 'cors';
 import Express from 'express';
@@ -7,8 +10,9 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
 import { io } from './util/socketio-server';
+
+
 // import AWS from 'aws-sdk';
-const AWS = require('aws-sdk');
 // console.log('AWS is :', AWS);
 // const credentials = new AWS.SharedIniFileCredentials({
 //   // profile: 'live2vod',
@@ -17,20 +21,13 @@ const AWS = require('aws-sdk');
 // AWS.config.credentials = credentials;
 // AWS.config.update({ region: 'ap-southeast-2' });
 
-// Create an S3 client
-const s3 = new AWS.S3();
 
 // Initialize the Express App
 const app = new Express();
 const server = require('http').createServer(app);
 const client = require('socket.io').listen(server);
-
 // console.log('socketIO is :', socketIO);
 io(client);
-
-// Load the SDK and UUID
-// const AWS = require('aws-sdk');
-// const uuid = require('node-uuid');
 
 
 // Set Development modes checks
@@ -69,6 +66,8 @@ import { match, RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 
 // Import required modules
+import AWSRouter from './api/aws/routes';
+
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 
@@ -105,8 +104,6 @@ import pencilData from './api/Pencil/dummyData';
 import BookRouter from './api/Book/routes';
 import bookData from './api/Book/dummyData';
 
-// import RecipeRouter from './api/Recipe/routes';
-// import recipeData from './api/Recipe/dummyData';
 
 import ShipmentRouter from './api/Shipment/routes';
 import shipmentData from './api/Shipment/dummyData';
@@ -116,7 +113,6 @@ import searchData from './api/Search/dummyData';
 
 import SocialRouter from './api/Social/routes';
 import socialData from './api/Social/dummyData';
-
 
 import serverConfig from './config';
 
@@ -158,47 +154,28 @@ app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 
 app.use('/signup', signup);
 app.use('/signin', signin);
-
 app.use('/api/pencils', protect);
-
 app.use('/api/user', userRouter);
+
+/*
+ * AWS SDK Resource interaction
+ */
+app.use('/api', AWSRouter);
+
+app.use('/api', ChannelRouter);
+app.use('/api', InputRouter);
 
 app.use('/api', postRouter);
 app.use('/api', FoodRouter);
 app.use('/api', ChefRouter);
 app.use('/api', PencilRouter);
 app.use('/api', BookRouter);
-
-app.use('/api', ChannelRouter);
-app.use('/api', InputRouter);
-
 app.use('/api', ShopcartRouter);
 app.use('/api', LocationRouter);
-// app.use('/api', RecipeRouter);
 app.use('/api', OrderRouter);
-
 app.use('/api', ShipmentRouter);
 app.use('/api', SearchRouter);
 app.use('/api', SocialRouter);
-
-
-// MEDIA LIVE API CALL Handling
-
-app.use('/api/create/channel', async (req, res) => {
-  console.log('req in media/create is :', req.params);
-  const params = {};
-  try {
-    await s3.listBuckets(params, (err, data) => {
-      if (err) console.log(err, err.stack); // an error occurred
-      else console.log(data); // successful response
-      return res.status(200).send({
-        message: data,
-      });
-    });
-  } catch (e) {
-    return res.status(400).end(e);
-  }
-});
 
 
 // Render Initial HTML
