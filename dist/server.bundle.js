@@ -1581,6 +1581,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 var ChannelSchema = new Schema({
+    Name: {
+        type: 'String',
+        required: true
+    },
     item: {
         type: 'String',
         required: false
@@ -8463,39 +8467,40 @@ var addChannel = exports.addChannel = function () {
                         sanitizedChannel = new _model2.default(req.body);
 
                         // Let's sanitize inputs
-
-                        sanitizedChannel.item = (0, _sanitizeHtml2.default)(sanitizedChannel.item);
+                        //  sanitizedChannel.item = sanitizeHtml(sanitizedChannel.item);
                         // sanitizedChannel.info = sanitizeHtml(sanitizedChannel.info); --}}
                         // sanitizedChannel.created_by = sanitizeHtml(sanitizedChannel.created_by);
                         // sanitizedChannel.created_at = sanitizeHtml(sanitizedChannel.created_at);
 
                         // Add slug data for specific field
-                        sanitizedChannel.slug = (0, _limax2.default)(sanitizedChannel.item.toLowerCase(), { lowercase: true });
+                        // sanitizedChannel.slug = slug(sanitizedChannel
+                        //     .item.toLowerCase(), {lowercase: true});
 
                         // Add cuid for the model
+
                         sanitizedChannel.cuid = (0, _cuid2.default)();
 
                         // Make asynchronous call to save the model to Database
-                        _context2.next = 7;
+                        _context2.next = 5;
                         return _model2.default.create(sanitizedChannel);
 
-                    case 7:
+                    case 5:
                         channel = _context2.sent;
                         return _context2.abrupt('return', res.status(201).json(channel.toJSON()));
 
-                    case 11:
-                        _context2.prev = 11;
+                    case 9:
+                        _context2.prev = 9;
                         _context2.t0 = _context2['catch'](0);
 
                         console.log(_context2.t0);
                         return _context2.abrupt('return', res.status(400).send(_context2.t0));
 
-                    case 15:
+                    case 13:
                     case 'end':
                         return _context2.stop();
                 }
             }
-        }, _callee2, this, [[0, 11]]);
+        }, _callee2, this, [[0, 9]]);
     }));
 
     return function addChannel(_x3, _x4) {

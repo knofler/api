@@ -49,14 +49,14 @@ export async function addChannel(req, res) {
     const sanitizedChannel = new Channel(req.body);
 
     // Let's sanitize inputs
-     sanitizedChannel.item = sanitizeHtml(sanitizedChannel.item);
+    //  sanitizedChannel.item = sanitizeHtml(sanitizedChannel.item);
     // sanitizedChannel.info = sanitizeHtml(sanitizedChannel.info); --}}
     // sanitizedChannel.created_by = sanitizeHtml(sanitizedChannel.created_by);
     // sanitizedChannel.created_at = sanitizeHtml(sanitizedChannel.created_at);
 
     // Add slug data for specific field
-    sanitizedChannel.slug = slug(sanitizedChannel
-        .item.toLowerCase(), {lowercase: true});
+    // sanitizedChannel.slug = slug(sanitizedChannel
+    //     .item.toLowerCase(), {lowercase: true});
 
     // Add cuid for the model
     sanitizedChannel.cuid = cuid();
