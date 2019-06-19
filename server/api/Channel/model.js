@@ -10,11 +10,15 @@ import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
 const ChannelSchema = new Schema({
-    Name: {
+    channelName: {
         type: 'String',
-        required: true,
+        required: false,
     },
-    item: {
+    channelId: {
+        type: 'String',
+        required: false,
+    },
+    channelClass: {
         type: 'String',
         required: false,
     },

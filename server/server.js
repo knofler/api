@@ -98,6 +98,9 @@ import channelData from './api/Channel/dummyData';
 import InputRouter from './api/Input/routes';
 import inputData from './api/Input/dummyData';
 
+import WorkflowRouter from './api/Workflow/routes';
+import workflowData from './api/Workflow/dummyData';
+
 import PencilRouter from './api/Pencil/routes';
 import pencilData from './api/Pencil/dummyData';
 
@@ -117,6 +120,8 @@ import socialData from './api/Social/dummyData';
 import serverConfig from './config';
 
 
+
+
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;
 
@@ -130,6 +135,7 @@ if (process.env.NODE_ENV !== 'test') {
       locationData();
       orderData();
       channelData();
+      workflowData();
       inputData();
       pencilData();
       postData();
@@ -164,6 +170,7 @@ app.use('/api', AWSRouter);
 
 app.use('/api', ChannelRouter);
 app.use('/api', InputRouter);
+app.use('/api', WorkflowRouter);
 
 app.use('/api', postRouter);
 app.use('/api', FoodRouter);

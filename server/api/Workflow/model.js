@@ -1,7 +1,7 @@
 /*
-* Input Model
+* Workflow Model
 *
-* This contains defalut Input model.
+* This contains defalut Workflow model.
 */
 
 
@@ -9,34 +9,46 @@ import mongoose from 'mongoose';
 import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
-const InputSchema = new Schema({
+const WorkflowSchema = new Schema({
+    channelName: {
+        type: 'String',
+        required: false,
+      },
+    channelId: {
+        type: 'String',
+        required: false,
+    },
+    channelClass: {
+        type: 'String',
+        required: false,
+    },
     inputName: {
         type: 'String',
         required: false,
-        },
+    },
     inputId: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     inputClass: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     inputType: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     destinationsOneIp: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     destinationsOnePort: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     destinationsOneUrl: {
-        type: 'String',
-        required: false,
+      type: 'String',
+      required: false,
     },
     destinationsTwoIp: {
         type: 'String',
@@ -73,4 +85,4 @@ const InputSchema = new Schema({
     },
 });
 
-export default mongoose.model('Input', InputSchema);
+export default mongoose.model('Workflow', WorkflowSchema);

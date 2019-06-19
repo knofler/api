@@ -3,6 +3,7 @@
 
 import AWS from 'aws-sdk';
 import listParams from './params/params.medialive.list';
+import inputParams from './params/params.medialive.input';
 import channelParams from './params/params.medialive.channel';
 
 
@@ -10,6 +11,10 @@ import channelParams from './params/params.medialive.channel';
 const ML = new AWS.MediaLive();
 const S3 = new AWS.S3();
 const params = {};
+const delChParams = {
+  ChannelId: '3062781' /* required */
+};
+
 
 // Generic function to handle user input, params modification and route management
 function paramsCheck(importParams, req) {
@@ -19,20 +24,110 @@ function paramsCheck(importParams, req) {
      return importParams
   } else {
     Object.keys(req.body).map(key => {
-      params[key] = req.body[key]
+      console.log("key is ", key);
+      if (key in params) {
+        params[key] = req.body[key]
+      }
+     
     })
     return params
    } 
 }
 
+function insertInputToChannel(channelParams, id) {
+  console.log("id in insertInputToChannel is::: ",id)
+  try {
+    const params = channelParams;
+    params['InputAttachments'] = [{
+      'InputId': id,
+      'InputSettings': {
+        'SourceEndBehavior': 'CONTINUE',
+        'NetworkInputSettings': {}
+      }
+    }]
+    return params;
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export async function workflow(req, res) {
+  const workflowData = {};
+  console.log("req.body is", req.body)
+
+    try {
+      await ML.createInput(paramsCheck(inputParams,req), (err, inputData) => {
+        if (err) console.log(err, err.stack); // an error occurred
+        else console.log(inputData); // successful response
+        workflowData['inputData'] = inputData;
+        console.log("inputData.Id is:: ", inputData.Input.Id)
+        try {
+          ML.createChannel(paramsCheck(insertInputToChannel(channelParams, inputData.Input.Id), req), (err, channelData) => {
+            if (err) console.log(err, err.stack); // an error occurred
+            else console.log(channelData); // successful response
+            workflowData['channelData'] =channelData
+            return res.status(200).send({
+              message: workflowData,
+            });
+          });
+        } catch (e) {
+          return res.status(400).end(e);
+        }
+      });
+    } catch (e) {
+      console.log(e)
+    }
+}
+
+/*
+ * Create Media Live Input
+ */
+export async function createInput(req, res) {
+  const dataToSend = {};
+  console.log('req in create/input is :', req.body);
+  try {
+    await ML.createInput(paramsCheck(inputParams, req), (err, inputData) => {
+      if (err) console.log(err, err.stack); // an error occurred
+      else console.log(inputData); // successful response
+      console.log("inputData.Id is:: ", inputData.Input.Id)
+      dataToSend['inputData'] =inputData
+      return res.status(200).send({
+        message: dataToSend,
+      });
+    });
+  } catch (e) {
+    return res.status(400).end(e);
+  }
+}
 
 /*
   * Create Media Live Channel
 */
 export async function createChannel(req, res) {
+  const dataToSend = {};
   console.log('req in create/channel is :', req.body);
   try {
-    await ML.createChannel(paramsCheck(channelParams,req), (err, data) => {
+    await ML.createChannel(paramsCheck(channelParams,req), (err, channelData) => {
+      if (err) console.log(err, err.stack); // an error occurred
+      else console.log(channelData); // successful response
+      dataToSend['channelData'] =channelData
+      return res.status(200).send({
+        message: dataToSend,
+      });
+    });
+  } catch (e) {
+    return res.status(400).end(e);
+  }
+
+}
+
+
+/*
+ * Delete Media Live Channel
+ */
+export async function deleteChannel(req, res) {
+  try {
+    await ML.deleteChannel(delChParams, (err, data) => {
       if (err) console.log(err, err.stack); // an error occurred
       else console.log(data); // successful response
       return res.status(200).send({
@@ -42,6 +137,7 @@ export async function createChannel(req, res) {
   } catch (e) {
     return res.status(400).end(e);
   }
+
 }
 
 /*
