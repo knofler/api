@@ -66,7 +66,9 @@ import { match, RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 
 // Import required modules
-import AWSRouter from './api/aws/routes';
+import WorkflowAWSRouter from './api/aws/Workflow/routes';
+import ChannelAWSRouter from './api/aws/Channel/routes';
+import InputAWSRouter from './api/aws/Input/routes';
 
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
@@ -166,11 +168,16 @@ app.use('/api/user', userRouter);
 /*
  * AWS SDK Resource interaction
  */
-app.use('/api', AWSRouter);
-
+app.use('/api/aws', WorkflowAWSRouter);
+app.use('/api/aws', ChannelAWSRouter);
+app.use('/api/aws', InputAWSRouter);
+/*
+ * API ROUTES
+ */
+app.use('/api', WorkflowRouter);
 app.use('/api', ChannelRouter);
 app.use('/api', InputRouter);
-app.use('/api', WorkflowRouter);
+
 
 app.use('/api', postRouter);
 app.use('/api', FoodRouter);

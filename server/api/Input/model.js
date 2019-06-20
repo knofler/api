@@ -10,6 +10,14 @@ import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
 const InputSchema = new Schema({
+    Name: {
+        type: 'String',
+        required: false,
+    },
+    Type: {
+        type: 'String',
+        required: false,
+    },
     inputName: {
         type: 'String',
         required: false,
