@@ -9,12 +9,14 @@ const path = require('path');
 const { exec } = require('child_process');
 
 const apiGenerator = require('./api/index.js');
+const awsGenerator = require('./aws/index.js');
 // const componentGenerator = require("./component/index.js");
 // const containerGenerator = require("./container/index.js");
 // const languageGenerator = require("./language/index.js");
 
 module.exports = plop => {
   plop.setGenerator('api', apiGenerator);
+  plop.setGenerator('aws', awsGenerator);
   // plop.setGenerator("component", componentGenerator);
   // plop.setGenerator("container", containerGenerator);
   // plop.setGenerator("language", languageGenerator);

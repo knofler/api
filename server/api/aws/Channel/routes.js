@@ -25,6 +25,13 @@ ChannelAWSRouter.route('/channels').post(ChannelAWSController.addChannel);
 // Delete a Channel by cuid
 // ChannelAWSRouter.route('/channels/:cuid').delete(ChannelAWSController.deleteChannel);
 
+// Start a MediaLive Channel
+ChannelAWSRouter.route('/channels/start/:ChannelId').post(ChannelAWSController.startChannel);
+
+// Stop a MediaLive Channel
+ChannelAWSRouter.route('/channels/stop/:ChannelId').post(ChannelAWSController.stopChannel);
+
+
 
 
 export default ChannelAWSRouter;

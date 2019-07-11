@@ -13,7 +13,8 @@ const params = {
       'NetworkInputSettings': {}
     }
   }],
-  Destinations: [{
+  Destinations: [
+    {
       "Id": "destination1",
       "Settings": [{
           "Url": 'https://0bdd660cacecc9b3.mediapackage.ap-southeast-2.amazonaws.com/in/v2/ec5fab7d912840f798b009fa170ee7fc/ec5fab7d912840f798b009fa170ee7fc/channel',
@@ -86,7 +87,7 @@ const params = {
           'ManifestCompression': 'NONE',
           'DirectoryStructure': 'SINGLE_DIRECTORY',
           'Mode': 'LIVE'
-        }
+        },
       },
       'Outputs': [{
         'VideoDescriptionName': 'video_1080p30',

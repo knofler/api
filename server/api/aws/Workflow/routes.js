@@ -25,6 +25,14 @@ WorkflowAWSRouter.route('/workflows').post(WorkflowAWSController.addWorkflow);
 // Delete a Workflow by cuid
 // WorkflowAWSRouter.route('/workflows/:cuid').delete(WorkflowAWSController.deleteWorkflow);
 
+// ### Other control functions
+
+// Start a MediaLive Channel
+WorkflowAWSRouter.route('/workflows/start/:ChannelId').post(WorkflowAWSController.startChannel);
+
+// Stop a MediaLive Channel
+WorkflowAWSRouter.route('/workflows/stop/:ChannelId').post(WorkflowAWSController.stopChannel);
+
 
 
 export default WorkflowAWSRouter;

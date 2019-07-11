@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -79,13 +79,13 @@ module.exports = require("express");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/regenerator");
+module.exports = require("babel-runtime/helpers/asyncToGenerator");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/asyncToGenerator");
+module.exports = require("babel-runtime/regenerator");
 
 /***/ }),
 /* 4 */
@@ -145,19 +145,19 @@ module.exports = require("react-redux");
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/core-js/json/stringify");
+module.exports = require("babel-runtime/core-js/object/keys");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/core-js/promise");
+module.exports = require("babel-runtime/core-js/json/stringify");
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/core-js/object/keys");
+module.exports = require("babel-runtime/core-js/promise");
 
 /***/ }),
 /* 16 */
@@ -167,6 +167,12 @@ module.exports = require("react-router");
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("aws-sdk");
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -273,7 +279,7 @@ var OrderSchema = new Schema({
 exports.default = _mongoose2.default.model('Order', OrderSchema);
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -294,7 +300,7 @@ function toggleAddPost() {
 }
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -305,11 +311,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getPost = exports.getPosts = undefined;
 
-var _toConsumableArray2 = __webpack_require__(63);
+var _toConsumableArray2 = __webpack_require__(64);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _PostActions = __webpack_require__(20);
+var _PostActions = __webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -361,7 +367,7 @@ var getPost = exports.getPost = function getPost(state, cuid) {
 exports.default = PostReducer;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -379,7 +385,7 @@ exports.fetchPost = fetchPost;
 exports.deletePost = deletePost;
 exports.deletePostRequest = deletePostRequest;
 
-var _apiCaller = __webpack_require__(64);
+var _apiCaller = __webpack_require__(65);
 
 var _apiCaller2 = _interopRequireDefault(_apiCaller);
 
@@ -451,7 +457,7 @@ function deletePostRequest(cuid) {
 }
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -472,16 +478,10 @@ var config = {
 exports.default = config;
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
 /* 23 */
 /***/ (function(module, exports) {
 
-module.exports = require("aws-sdk");
+module.exports = require("react-helmet");
 
 /***/ }),
 /* 24 */
@@ -531,7 +531,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getShowAddPost = undefined;
 
-var _AppActions = __webpack_require__(18);
+var _AppActions = __webpack_require__(19);
 
 // Initial State
 var initialState = {
@@ -582,41 +582,41 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.localizationData = exports.enabledLanguages = undefined;
 
-var _assign = __webpack_require__(68);
+var _assign = __webpack_require__(69);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _keys = __webpack_require__(15);
+var _keys = __webpack_require__(13);
 
 var _keys2 = _interopRequireDefault(_keys);
 
 var _reactIntl = __webpack_require__(11);
 
-var _intl = __webpack_require__(69);
+var _intl = __webpack_require__(70);
 
 var _intl2 = _interopRequireDefault(_intl);
 
-var _intlLocalesSupported = __webpack_require__(70);
+var _intlLocalesSupported = __webpack_require__(71);
 
 var _intlLocalesSupported2 = _interopRequireDefault(_intlLocalesSupported);
 
-__webpack_require__(71);
+__webpack_require__(72);
 
-var _en = __webpack_require__(72);
+var _en = __webpack_require__(73);
 
 var _en2 = _interopRequireDefault(_en);
 
-var _en3 = __webpack_require__(73);
+var _en3 = __webpack_require__(74);
 
 var _en4 = _interopRequireDefault(_en3);
 
-__webpack_require__(74);
+__webpack_require__(75);
 
-var _fr = __webpack_require__(75);
+var _fr = __webpack_require__(76);
 
 var _fr2 = _interopRequireDefault(_fr);
 
-var _fr3 = __webpack_require__(76);
+var _fr3 = __webpack_require__(77);
 
 var _fr4 = _interopRequireDefault(_fr3);
 
@@ -731,13 +731,13 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reduxDevtools = __webpack_require__(77);
+var _reduxDevtools = __webpack_require__(78);
 
-var _reduxDevtoolsLogMonitor = __webpack_require__(78);
+var _reduxDevtoolsLogMonitor = __webpack_require__(79);
 
 var _reduxDevtoolsLogMonitor2 = _interopRequireDefault(_reduxDevtoolsLogMonitor);
 
-var _reduxDevtoolsDockMonitor = __webpack_require__(79);
+var _reduxDevtoolsDockMonitor = __webpack_require__(80);
 
 var _reduxDevtoolsDockMonitor2 = _interopRequireDefault(_reduxDevtoolsDockMonitor);
 
@@ -793,21 +793,21 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(12);
 
-var _PostList = __webpack_require__(96);
+var _PostList = __webpack_require__(102);
 
 var _PostList2 = _interopRequireDefault(_PostList);
 
-var _PostCreateWidget = __webpack_require__(98);
+var _PostCreateWidget = __webpack_require__(104);
 
 var _PostCreateWidget2 = _interopRequireDefault(_PostCreateWidget);
 
-var _PostActions = __webpack_require__(20);
+var _PostActions = __webpack_require__(21);
 
-var _AppActions = __webpack_require__(18);
+var _AppActions = __webpack_require__(19);
 
 var _AppReducer = __webpack_require__(30);
 
-var _PostReducer = __webpack_require__(19);
+var _PostReducer = __webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -911,7 +911,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(12);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(23);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
@@ -929,9 +929,9 @@ var _PostListItem = {
 
 var _PostListItem2 = _interopRequireDefault(_PostListItem);
 
-var _PostActions = __webpack_require__(20);
+var _PostActions = __webpack_require__(21);
 
-var _PostReducer = __webpack_require__(19);
+var _PostReducer = __webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1016,7 +1016,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.User = undefined;
 
-var _promise = __webpack_require__(14);
+var _promise = __webpack_require__(15);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -1024,7 +1024,7 @@ var _mongoose = __webpack_require__(0);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _bcrypt = __webpack_require__(111);
+var _bcrypt = __webpack_require__(117);
 
 var _bcrypt2 = _interopRequireDefault(_bcrypt);
 
@@ -1587,6 +1587,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 var ChannelSchema = new Schema({
+    Arn: {
+        type: 'String',
+        required: false
+    },
     Name: {
         type: 'String',
         required: false
@@ -1596,6 +1600,42 @@ var ChannelSchema = new Schema({
         required: false
     },
     channelId: {
+        type: 'String',
+        required: false
+    },
+    InputId: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsOneUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsOneUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsTwoUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsTwoUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsOneUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsOneUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsTwoUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsTwoUsername: {
         type: 'String',
         required: false
     },
@@ -1648,6 +1688,67 @@ var _assert = __webpack_require__(7);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*
+* Mpchannel Model
+*
+* This contains defalut Mpchannel model.
+*/
+
+var Schema = _mongoose2.default.Schema;
+
+var MpchannelSchema = new Schema({
+    Id: {
+        type: 'String',
+        required: false
+    },
+    Description: {
+        type: 'String',
+        required: false
+    },
+    info: {
+        type: 'String',
+        required: false
+    },
+    slug: {
+        type: 'String',
+        required: false
+    },
+    cuid: {
+        type: 'String',
+        required: false
+    },
+    createdBy: {
+        type: 'String',
+        required: false
+    },
+    created_at: {
+        type: 'Date',
+        default: Date.now,
+        required: false
+    }
+});
+
+exports.default = _mongoose2.default.model('Mpchannel', MpchannelSchema);
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _mongoose = __webpack_require__(0);
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
+var _assert = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
 * Input Model
 *
 * This contains defalut Input model.
@@ -1656,6 +1757,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 var InputSchema = new Schema({
+    AttachedChannels: {
+        type: 'Array',
+        required: false
+    },
+    Arn: {
+        type: 'String',
+        required: false
+    },
     Name: {
         type: 'String',
         required: false
@@ -1704,6 +1813,14 @@ var InputSchema = new Schema({
         type: 'String',
         required: false
     },
+    SecurityGroups: {
+        type: 'Array',
+        required: false
+    },
+    State: {
+        type: 'String',
+        required: false
+    },
     info: {
         type: 'String',
         required: false
@@ -1730,7 +1847,7 @@ var InputSchema = new Schema({
 exports.default = _mongoose2.default.model('Input', InputSchema);
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1757,6 +1874,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 var WorkflowSchema = new Schema({
+    channelArn: {
+        type: 'String',
+        required: false
+    },
     channelName: {
         type: 'String',
         required: false
@@ -1777,11 +1898,27 @@ var WorkflowSchema = new Schema({
         type: 'String',
         required: false
     },
+    AttachedChannels: {
+        type: 'Array',
+        required: false
+    },
+    inputArn: {
+        type: 'String',
+        required: false
+    },
     inputClass: {
         type: 'String',
         required: false
     },
     inputType: {
+        type: 'String',
+        required: false
+    },
+    SecurityGroups: {
+        type: 'Array',
+        required: false
+    },
+    State: {
         type: 'String',
         required: false
     },
@@ -1806,6 +1943,38 @@ var WorkflowSchema = new Schema({
         required: false
     },
     destinationsTwoUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsOneUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsOneUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsTwoUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsOneSettingsTwoUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsOneUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsOneUsername: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsTwoUrl: {
+        type: 'String',
+        required: false
+    },
+    destinationsTwoSettingsTwoUsername: {
         type: 'String',
         required: false
     },
@@ -1835,7 +2004,7 @@ var WorkflowSchema = new Schema({
 exports.default = _mongoose2.default.model('Workflow', WorkflowSchema);
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1892,7 +2061,7 @@ var PencilSchema = new Schema({
 exports.default = _mongoose2.default.model('Pencil', PencilSchema);
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1949,7 +2118,7 @@ var BookSchema = new Schema({
 exports.default = _mongoose2.default.model('Book', BookSchema);
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2105,7 +2274,7 @@ var ShipmentSchema = new Schema({
 exports.default = _mongoose2.default.model('Shipment', ShipmentSchema);
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2162,7 +2331,7 @@ var SearchSchema = new Schema({
 exports.default = _mongoose2.default.model('Search', SearchSchema);
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2219,13 +2388,13 @@ var SocialSchema = new Schema({
 exports.default = _mongoose2.default.model('Social', SocialSchema);
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("webpack");
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2239,11 +2408,11 @@ var _jsx2 = __webpack_require__(9);
 
 var _jsx3 = _interopRequireDefault(_jsx2);
 
-var _stringify = __webpack_require__(13);
+var _stringify = __webpack_require__(14);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _cors = __webpack_require__(53);
+var _cors = __webpack_require__(54);
 
 var _cors2 = _interopRequireDefault(_cors);
 
@@ -2251,7 +2420,7 @@ var _express = __webpack_require__(1);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _compression = __webpack_require__(54);
+var _compression = __webpack_require__(55);
 
 var _compression2 = _interopRequireDefault(_compression);
 
@@ -2259,21 +2428,21 @@ var _mongoose = __webpack_require__(0);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _bodyParser = __webpack_require__(55);
+var _bodyParser = __webpack_require__(56);
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _path = __webpack_require__(56);
+var _path = __webpack_require__(57);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _IntlWrapper = __webpack_require__(57);
+var _IntlWrapper = __webpack_require__(58);
 
 var _IntlWrapper2 = _interopRequireDefault(_IntlWrapper);
 
-var _socketioServer = __webpack_require__(58);
+var _socketioServer = __webpack_require__(59);
 
-var _store = __webpack_require__(60);
+var _store = __webpack_require__(61);
 
 var _reactRedux = __webpack_require__(12);
 
@@ -2281,149 +2450,161 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(80);
+var _server = __webpack_require__(81);
 
 var _reactRouter = __webpack_require__(16);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(23);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routes = __webpack_require__(81);
+var _routes = __webpack_require__(82);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _routes3 = __webpack_require__(85);
+var _routes3 = __webpack_require__(88);
 
 var _routes4 = _interopRequireDefault(_routes3);
 
-var _routes5 = __webpack_require__(89);
+var _routes5 = __webpack_require__(92);
 
 var _routes6 = _interopRequireDefault(_routes5);
 
-var _routes7 = __webpack_require__(92);
+var _routes7 = __webpack_require__(95);
 
 var _routes8 = _interopRequireDefault(_routes7);
 
-var _fetchData = __webpack_require__(99);
-
-var _post = __webpack_require__(101);
-
-var _post2 = _interopRequireDefault(_post);
-
-var _dummyData = __webpack_require__(103);
-
-var _user = __webpack_require__(109);
-
-var _user2 = _interopRequireDefault(_user);
-
-var _auth = __webpack_require__(112);
-
-var _routes9 = __webpack_require__(114);
+var _routes9 = __webpack_require__(98);
 
 var _routes10 = _interopRequireDefault(_routes9);
 
-var _dummyData2 = __webpack_require__(116);
+var _fetchData = __webpack_require__(105);
 
-var _dummyData3 = _interopRequireDefault(_dummyData2);
+var _post = __webpack_require__(107);
 
-var _routes11 = __webpack_require__(117);
+var _post2 = _interopRequireDefault(_post);
+
+var _dummyData = __webpack_require__(109);
+
+var _user = __webpack_require__(115);
+
+var _user2 = _interopRequireDefault(_user);
+
+var _auth = __webpack_require__(118);
+
+var _routes11 = __webpack_require__(120);
 
 var _routes12 = _interopRequireDefault(_routes11);
 
-var _dummyData4 = __webpack_require__(119);
+var _dummyData2 = __webpack_require__(122);
 
-var _dummyData5 = _interopRequireDefault(_dummyData4);
+var _dummyData3 = _interopRequireDefault(_dummyData2);
 
-var _routes13 = __webpack_require__(120);
+var _routes13 = __webpack_require__(123);
 
 var _routes14 = _interopRequireDefault(_routes13);
 
-var _dummyData6 = __webpack_require__(122);
+var _dummyData4 = __webpack_require__(125);
 
-var _dummyData7 = _interopRequireDefault(_dummyData6);
+var _dummyData5 = _interopRequireDefault(_dummyData4);
 
-var _routes15 = __webpack_require__(123);
+var _routes15 = __webpack_require__(126);
 
 var _routes16 = _interopRequireDefault(_routes15);
 
-var _dummyData8 = __webpack_require__(125);
+var _dummyData6 = __webpack_require__(128);
 
-var _dummyData9 = _interopRequireDefault(_dummyData8);
+var _dummyData7 = _interopRequireDefault(_dummyData6);
 
-var _routes17 = __webpack_require__(126);
+var _routes17 = __webpack_require__(129);
 
 var _routes18 = _interopRequireDefault(_routes17);
 
-var _dummyData10 = __webpack_require__(128);
+var _dummyData8 = __webpack_require__(131);
 
-var _dummyData11 = _interopRequireDefault(_dummyData10);
+var _dummyData9 = _interopRequireDefault(_dummyData8);
 
-var _routes19 = __webpack_require__(129);
+var _routes19 = __webpack_require__(132);
 
 var _routes20 = _interopRequireDefault(_routes19);
 
-var _dummyData12 = __webpack_require__(131);
+var _dummyData10 = __webpack_require__(134);
 
-var _dummyData13 = _interopRequireDefault(_dummyData12);
+var _dummyData11 = _interopRequireDefault(_dummyData10);
 
-var _routes21 = __webpack_require__(132);
+var _routes21 = __webpack_require__(135);
 
 var _routes22 = _interopRequireDefault(_routes21);
 
-var _dummyData14 = __webpack_require__(134);
+var _dummyData12 = __webpack_require__(137);
 
-var _dummyData15 = _interopRequireDefault(_dummyData14);
+var _dummyData13 = _interopRequireDefault(_dummyData12);
 
-var _routes23 = __webpack_require__(135);
+var _routes23 = __webpack_require__(138);
 
 var _routes24 = _interopRequireDefault(_routes23);
 
-var _dummyData16 = __webpack_require__(137);
+var _dummyData14 = __webpack_require__(140);
 
-var _dummyData17 = _interopRequireDefault(_dummyData16);
+var _dummyData15 = _interopRequireDefault(_dummyData14);
 
-var _routes25 = __webpack_require__(138);
+var _routes25 = __webpack_require__(141);
 
 var _routes26 = _interopRequireDefault(_routes25);
 
-var _dummyData18 = __webpack_require__(140);
+var _dummyData16 = __webpack_require__(143);
 
-var _dummyData19 = _interopRequireDefault(_dummyData18);
+var _dummyData17 = _interopRequireDefault(_dummyData16);
 
-var _routes27 = __webpack_require__(141);
+var _routes27 = __webpack_require__(144);
 
 var _routes28 = _interopRequireDefault(_routes27);
 
-var _dummyData20 = __webpack_require__(143);
+var _dummyData18 = __webpack_require__(146);
 
-var _dummyData21 = _interopRequireDefault(_dummyData20);
+var _dummyData19 = _interopRequireDefault(_dummyData18);
 
-var _routes29 = __webpack_require__(144);
+var _routes29 = __webpack_require__(147);
 
 var _routes30 = _interopRequireDefault(_routes29);
 
-var _dummyData22 = __webpack_require__(146);
+var _dummyData20 = __webpack_require__(149);
 
-var _dummyData23 = _interopRequireDefault(_dummyData22);
+var _dummyData21 = _interopRequireDefault(_dummyData20);
 
-var _routes31 = __webpack_require__(147);
+var _routes31 = __webpack_require__(150);
 
 var _routes32 = _interopRequireDefault(_routes31);
 
-var _dummyData24 = __webpack_require__(149);
+var _dummyData22 = __webpack_require__(152);
 
-var _dummyData25 = _interopRequireDefault(_dummyData24);
+var _dummyData23 = _interopRequireDefault(_dummyData22);
 
-var _routes33 = __webpack_require__(150);
+var _routes33 = __webpack_require__(153);
 
 var _routes34 = _interopRequireDefault(_routes33);
 
-var _dummyData26 = __webpack_require__(152);
+var _dummyData24 = __webpack_require__(155);
+
+var _dummyData25 = _interopRequireDefault(_dummyData24);
+
+var _routes35 = __webpack_require__(156);
+
+var _routes36 = _interopRequireDefault(_routes35);
+
+var _dummyData26 = __webpack_require__(158);
 
 var _dummyData27 = _interopRequireDefault(_dummyData26);
 
-var _config = __webpack_require__(21);
+var _routes37 = __webpack_require__(159);
+
+var _routes38 = _interopRequireDefault(_routes37);
+
+var _dummyData28 = __webpack_require__(161);
+
+var _dummyData29 = _interopRequireDefault(_dummyData28);
+
+var _config = __webpack_require__(22);
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -2445,8 +2626,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /* eslint-disable comma-dangle */
 /* eslint-disable no-console */
 var app = new _express2.default();
-var server = __webpack_require__(153).createServer(app);
-var client = __webpack_require__(154).listen(server);
+var server = __webpack_require__(162).createServer(app);
+var client = __webpack_require__(163).listen(server);
 // console.log('socketIO is :', socketIO);
 (0, _socketioServer.io)(client);
 
@@ -2458,13 +2639,13 @@ var isProdMode = process.env.NODE_ENV === 'production' || false;
 if (isDevMode) {
   // Webpack Requirements
   // eslint-disable-next-line global-require
-  var webpack = __webpack_require__(51);
+  var webpack = __webpack_require__(52);
   // eslint-disable-next-line global-require
-  var config = __webpack_require__(155);
+  var config = __webpack_require__(164);
   // eslint-disable-next-line global-require
-  var webpackDevMiddleware = __webpack_require__(159);
+  var webpackDevMiddleware = __webpack_require__(168);
   // eslint-disable-next-line global-require
-  var webpackHotMiddleware = __webpack_require__(160);
+  var webpackHotMiddleware = __webpack_require__(169);
   var compiler = webpack(config);
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
@@ -2495,15 +2676,15 @@ if (process.env.NODE_ENV !== 'test') {
       (0, _dummyData9.default)();
       (0, _dummyData11.default)();
       (0, _dummyData13.default)();
-      (0, _dummyData17.default)();
-      (0, _dummyData15.default)();
       (0, _dummyData19.default)();
+      (0, _dummyData17.default)();
+      (0, _dummyData21.default)();
       (0, _dummyData.postData)();
       // recipeData();
-      (0, _dummyData25.default)();
-      (0, _dummyData21.default)();
       (0, _dummyData27.default)();
       (0, _dummyData23.default)();
+      (0, _dummyData29.default)();
+      (0, _dummyData25.default)();
       (0, _dummyData7.default)();
     } catch (e) {
       console.error('Please make sure Mongodb is installed and running!', e); // eslint-disable-line no-console
@@ -2529,24 +2710,26 @@ app.use('/api/user', _user2.default);
 app.use('/api/aws', _routes2.default);
 app.use('/api/aws', _routes4.default);
 app.use('/api/aws', _routes6.default);
+app.use('/api/aws', _routes8.default);
 /*
  * API ROUTES
  */
-app.use('/api', _routes24.default);
-app.use('/api', _routes20.default);
+app.use('/api', _routes28.default);
 app.use('/api', _routes22.default);
+app.use('/api', _routes26.default);
+app.use('/api', _routes24.default);
 
 app.use('/api', _post2.default);
-app.use('/api', _routes12.default);
-app.use('/api', _routes10.default);
-app.use('/api', _routes26.default);
-app.use('/api', _routes28.default);
 app.use('/api', _routes14.default);
-app.use('/api', _routes16.default);
-app.use('/api', _routes18.default);
+app.use('/api', _routes12.default);
 app.use('/api', _routes30.default);
 app.use('/api', _routes32.default);
+app.use('/api', _routes16.default);
+app.use('/api', _routes18.default);
+app.use('/api', _routes20.default);
 app.use('/api', _routes34.default);
+app.use('/api', _routes36.default);
+app.use('/api', _routes38.default);
 
 // Render Initial HTML
 var renderFullPage = function renderFullPage(html, initialState) {
@@ -2567,7 +2750,7 @@ var renderError = function renderError(err) {
 
 // Server Side Rendering based on routes matched by React-router.
 app.use(function (req, res, next) {
-  (0, _reactRouter.match)({ routes: _routes8.default, location: req.url }, function (err, redirectLocation, renderProps) {
+  (0, _reactRouter.match)({ routes: _routes10.default, location: req.url }, function (err, redirectLocation, renderProps) {
     if (err) {
       return res.status(500).end(renderError(err));
     }
@@ -2606,31 +2789,31 @@ exports.default = app;
 /* WEBPACK VAR INJECTION */}.call(exports, "server"))
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("cors");
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("compression");
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2673,7 +2856,7 @@ function mapStateToProps(store) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(IntlWrapper);
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2683,13 +2866,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(13);
+var _stringify = __webpack_require__(14);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
 exports.io = io;
 
-var _socket = __webpack_require__(59);
+var _socket = __webpack_require__(60);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2750,7 +2933,7 @@ function io(client) {
 }
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2761,7 +2944,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.register = undefined;
 
-var _model = __webpack_require__(17);
+var _model = __webpack_require__(18);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -2793,7 +2976,7 @@ function register(socket) {
 exports.register = register;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2806,11 +2989,11 @@ exports.configureStore = configureStore;
 
 var _redux = __webpack_require__(29);
 
-var _reduxThunk = __webpack_require__(61);
+var _reduxThunk = __webpack_require__(62);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reducers = __webpack_require__(62);
+var _reducers = __webpack_require__(63);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -2851,13 +3034,13 @@ function configureStore() {
 }
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2873,11 +3056,11 @@ var _AppReducer = __webpack_require__(30);
 
 var _AppReducer2 = _interopRequireDefault(_AppReducer);
 
-var _PostReducer = __webpack_require__(19);
+var _PostReducer = __webpack_require__(20);
 
 var _PostReducer2 = _interopRequireDefault(_PostReducer);
 
-var _IntlReducer = __webpack_require__(66);
+var _IntlReducer = __webpack_require__(67);
 
 var _IntlReducer2 = _interopRequireDefault(_IntlReducer);
 
@@ -2896,13 +3079,13 @@ exports.default = (0, _redux.combineReducers)({
 // Import Reducers
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/toConsumableArray");
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2913,21 +3096,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.API_URL = undefined;
 
-var _promise = __webpack_require__(14);
+var _promise = __webpack_require__(15);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _stringify = __webpack_require__(13);
+var _stringify = __webpack_require__(14);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
 exports.default = callApi;
 
-var _isomorphicFetch = __webpack_require__(65);
+var _isomorphicFetch = __webpack_require__(66);
 
 var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-var _config = __webpack_require__(21);
+var _config = __webpack_require__(22);
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -2964,13 +3147,13 @@ function callApi(endpoint) {
 }
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2980,7 +3163,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _objectWithoutProperties2 = __webpack_require__(67);
+var _objectWithoutProperties2 = __webpack_require__(68);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -3022,43 +3205,43 @@ var IntlReducer = function IntlReducer() {
 exports.default = IntlReducer;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/objectWithoutProperties");
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/object/assign");
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = require("intl");
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("intl-locales-supported");
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("intl/locale-data/jsonp/en");
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-intl/locale-data/en");
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3088,19 +3271,19 @@ exports.default = {
 };
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("intl/locale-data/jsonp/fr");
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-intl/locale-data/fr");
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3130,31 +3313,31 @@ exports.default = {
 };
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-devtools");
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-devtools-log-monitor");
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-devtools-dock-monitor");
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3166,7 +3349,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(82);
+var _controller = __webpack_require__(83);
 
 var WorkflowAWSController = _interopRequireWildcard(_controller);
 
@@ -3196,11 +3379,18 @@ WorkflowAWSRouter.route('/workflows').post(WorkflowAWSController.addWorkflow);
 // Delete a Workflow by cuid
 // WorkflowAWSRouter.route('/workflows/:cuid').delete(WorkflowAWSController.deleteWorkflow);
 
+// ### Other control functions
+
+// Start a MediaLive Channel
+WorkflowAWSRouter.route('/workflows/start/:ChannelId').post(WorkflowAWSController.startChannel);
+
+// Stop a MediaLive Channel
+WorkflowAWSRouter.route('/workflows/stop/:ChannelId').post(WorkflowAWSController.stopChannel);
 
 exports.default = WorkflowAWSRouter;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3209,72 +3399,245 @@ exports.default = WorkflowAWSRouter;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getBucketList = exports.getChannelList = exports.deleteChannel = exports.createChannel = exports.createInput = exports.addWorkflow = undefined;
+exports.getBucketList = exports.getChannelList = exports.stopChannel = exports.startChannel = exports.deleteChannel = exports.createChannel = exports.createInput = exports.addWorkflow = exports.addMpchannel = exports.createUniqueSSMParams = exports.createSSMParams = undefined;
 
-var _regenerator = __webpack_require__(2);
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _keys = __webpack_require__(15);
+var _keys = __webpack_require__(13);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var addWorkflow = exports.addWorkflow = function () {
-  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
-    var workflowData;
-    return _regenerator2.default.wrap(function _callee$(_context) {
+var _regenerator = __webpack_require__(3);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var createSSMParams = exports.createSSMParams = function () {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(ssmParams) {
+    var response = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var params;
+    return _regenerator2.default.wrap(function _callee$(_context2) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            console.log("ssmParams in createSSMParams is ", ssmParams);
+            console.log("response in createSSMParmas is ", response);
+            params = ssmParams;
+
+            response.forEach(function (each) {
+              params['Name'] = '/api_mediaPackage/destination/' + each.Username + '/HLS';
+              params['Value'] = each.Password;
+              console.log("params['Name'] is", params['Name']);
+              console.log("params['Value] is", params['Value']);
+              //Create SSM Parameters
+              ssm.putParameter(params, function (err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else console.log("ssm parameters creation aws response :: ", data); // successful response
+              });
+            });
+
+          case 4:
+          case 'end':
+            return _context2.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+
+  return function createSSMParams(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+var createUniqueSSMParams = exports.createUniqueSSMParams = function () {
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(ssmParams) {
+    var response = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var params;
+    return _regenerator2.default.wrap(function _callee2$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            console.log("ssmParams in createSSMParams is ", ssmParams);
+            console.log("response in createSSMParmas is ", response);
+            params = ssmParams;
+
+            response.forEach(function (each) {
+              params['Name'] = '/api_mediaPackage/destination/' + each.Username + '-' + textChunk(each.Password, 16) + '/HLS';
+              params['Value'] = each.Password;
+              console.log("params['Name'] is", params['Name']);
+              console.log("params['Value] is", params['Value']);
+              //Create SSM Parameters
+              ssm.putParameter(params, function (err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else console.log("ssm parameters creation aws response :: ", data); // successful response
+              });
+            });
+
+          case 4:
+          case 'end':
+            return _context3.stop();
+        }
+      }
+    }, _callee2, this);
+  }));
+
+  return function createUniqueSSMParams(_x3) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+var addMpchannel = exports.addMpchannel = function () {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(params, req) {
+    var mpChannelData;
+    return _regenerator2.default.wrap(function _callee3$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            mpChannelData = {};
+
+            console.log("req.body is", req.body);
+            _context4.prev = 2;
+            _context4.next = 5;
+            return MP.createChannel(paramsCheck(params, req), function (err, mpchannel) {
+              if (err) console.log(err, err.stack); // an error occurred
+              else console.log("mpchannel inside addMpChannel function is ::", mpchannel); // successful response
+              mpChannelData = mpchannel;
+            });
+
+          case 5:
+            return _context4.abrupt('return', mpChannelData);
+
+          case 8:
+            _context4.prev = 8;
+            _context4.t0 = _context4['catch'](2);
+
+            console.log("e in nedia package", _context4.t0);
+
+          case 11:
+          case 'end':
+            return _context4.stop();
+        }
+      }
+    }, _callee3, this, [[2, 8]]);
+  }));
+
+  return function addMpchannel(_x5, _x6) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+var addWorkflow = exports.addWorkflow = function () {
+  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
+    var workflowData;
+    return _regenerator2.default.wrap(function _callee5$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
           case 0:
             workflowData = {};
 
             console.log("req.body is", req.body);
 
-            _context.prev = 2;
-            _context.next = 5;
+            _context6.prev = 2;
+            _context6.next = 5;
             return ML.createInput(paramsCheck(_mediaLive2.default, req), function (err, inputData) {
+              //Create Input 
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(inputData); // successful response
               workflowData['inputData'] = inputData;
               console.log("inputData.Id is:: ", inputData.Input.Id);
-              try {
-                ML.createChannel(paramsCheck(insertInputToChannel(_mediaLive4.default, inputData.Input.Id), req), function (err, channelData) {
-                  if (err) console.log(err, err.stack); // an error occurred
-                  else console.log(channelData); // successful response
-                  workflowData['channelData'] = channelData;
-                  return res.status(200).send({
-                    message: workflowData
-                  });
-                });
-              } catch (e) {
-                return res.status(400).end(e);
+              // Create Media Package Channel
+              if (req.body.streamKey) {
+                //Create Social Media Stream
+                try {
+                  // Create MediaLive Channel            
+                  setTimeout(function () {
+                    ML.createChannel(insertInputToChannel(createSocialStream(paramsCheck(_mediaLive4.default, req), req), inputData.Input.Id), function (err, channelData) {
+                      if (err) console.log(err, err.stack); // an error occurred
+                      else console.log(channelData); // successful response
+                      workflowData['channelData'] = channelData;
+                      return res.status(200).send({
+                        message: workflowData
+                      });
+                    });
+                  }, 200);
+                } catch (e) {
+                  console.log("Social media stream error", e);
+                }
+              } else {
+                (function () {
+                  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(reqData) {
+                    return _regenerator2.default.wrap(function _callee4$(_context5) {
+                      while (1) {
+                        switch (_context5.prev = _context5.next) {
+                          case 0:
+                            _context5.prev = 0;
+                            _context5.next = 3;
+                            return MP.createChannel(paramsCheck(_mediaPackage2.default, reqData), function (err, mpChannelData) {
+                              if (err) console.log(err, err.stack); // an error occurred
+                              else console.log("mpchannel inside addMpChannel function is ::", mpChannelData); // successful response
+                              //create SSM Params with MediaPackage response
+                              createSSMParams(_ssm2.default, mpChannelData.HlsIngest.IngestEndpoints);
+                              workflowData['mpChannelData'] = mpChannelData;
+                              console.log("workflow in mediaPackage create Channel is ", workflowData);
+                              // Create MediaLive Channel            
+                              setTimeout(function () {
+                                ML.createChannel(insertInputToChannel(insertMediaPackageToChannel(paramsCheck(_mediaLive4.default, req), mpChannelData), inputData.Input.Id), function (err, channelData) {
+                                  if (err) console.log(err, err.stack); // an error occurred
+                                  else console.log(channelData); // successful response
+                                  workflowData['channelData'] = channelData;
+                                  return res.status(200).send({
+                                    message: workflowData
+                                  });
+                                });
+                              }, 200);
+                            });
+
+                          case 3:
+                            _context5.next = 8;
+                            break;
+
+                          case 5:
+                            _context5.prev = 5;
+                            _context5.t0 = _context5['catch'](0);
+
+                            console.log("Create MediaPackage channel error");
+
+                          case 8:
+                          case 'end':
+                            return _context5.stop();
+                        }
+                      }
+                    }, _callee4, this, [[0, 5]]);
+                  }));
+
+                  return function (_x9) {
+                    return _ref5.apply(this, arguments);
+                  };
+                })()(req);
               }
             });
 
           case 5:
-            _context.next = 10;
+            _context6.next = 10;
             break;
 
           case 7:
-            _context.prev = 7;
-            _context.t0 = _context['catch'](2);
+            _context6.prev = 7;
+            _context6.t0 = _context6['catch'](2);
 
-            console.log(_context.t0);
+            console.log("Create input catch error", _context6.t0);
 
           case 10:
           case 'end':
-            return _context.stop();
+            return _context6.stop();
         }
       }
-    }, _callee, this, [[2, 7]]);
+    }, _callee5, this, [[2, 7]]);
   }));
 
-  return function addWorkflow(_x, _x2) {
-    return _ref.apply(this, arguments);
+  return function addWorkflow(_x7, _x8) {
+    return _ref4.apply(this, arguments);
   };
 }();
 
@@ -3284,17 +3647,17 @@ var addWorkflow = exports.addWorkflow = function () {
 
 
 var createInput = exports.createInput = function () {
-  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
+  var _ref6 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6(req, res) {
     var dataToSend;
-    return _regenerator2.default.wrap(function _callee2$(_context2) {
+    return _regenerator2.default.wrap(function _callee6$(_context7) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context7.prev = _context7.next) {
           case 0:
             dataToSend = {};
 
             console.log('req in create/input is :', req.body);
-            _context2.prev = 2;
-            _context2.next = 5;
+            _context7.prev = 2;
+            _context7.next = 5;
             return ML.createInput(paramsCheck(_mediaLive2.default, req), function (err, inputData) {
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(inputData); // successful response
@@ -3306,24 +3669,24 @@ var createInput = exports.createInput = function () {
             });
 
           case 5:
-            _context2.next = 10;
+            _context7.next = 10;
             break;
 
           case 7:
-            _context2.prev = 7;
-            _context2.t0 = _context2['catch'](2);
-            return _context2.abrupt('return', res.status(400).end(_context2.t0));
+            _context7.prev = 7;
+            _context7.t0 = _context7['catch'](2);
+            return _context7.abrupt('return', res.status(400).end(_context7.t0));
 
           case 10:
           case 'end':
-            return _context2.stop();
+            return _context7.stop();
         }
       }
-    }, _callee2, this, [[2, 7]]);
+    }, _callee6, this, [[2, 7]]);
   }));
 
-  return function createInput(_x3, _x4) {
-    return _ref2.apply(this, arguments);
+  return function createInput(_x10, _x11) {
+    return _ref6.apply(this, arguments);
   };
 }();
 
@@ -3333,17 +3696,17 @@ var createInput = exports.createInput = function () {
 
 
 var createChannel = exports.createChannel = function () {
-  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(req, res) {
+  var _ref7 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(req, res) {
     var dataToSend;
-    return _regenerator2.default.wrap(function _callee3$(_context3) {
+    return _regenerator2.default.wrap(function _callee7$(_context8) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context8.prev = _context8.next) {
           case 0:
             dataToSend = {};
 
             console.log('req in create/channel is :', req.body);
-            _context3.prev = 2;
-            _context3.next = 5;
+            _context8.prev = 2;
+            _context8.next = 5;
             return ML.createChannel(paramsCheck(_mediaLive4.default, req), function (err, channelData) {
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(channelData); // successful response
@@ -3354,24 +3717,24 @@ var createChannel = exports.createChannel = function () {
             });
 
           case 5:
-            _context3.next = 10;
+            _context8.next = 10;
             break;
 
           case 7:
-            _context3.prev = 7;
-            _context3.t0 = _context3['catch'](2);
-            return _context3.abrupt('return', res.status(400).end(_context3.t0));
+            _context8.prev = 7;
+            _context8.t0 = _context8['catch'](2);
+            return _context8.abrupt('return', res.status(400).end(_context8.t0));
 
           case 10:
           case 'end':
-            return _context3.stop();
+            return _context8.stop();
         }
       }
-    }, _callee3, this, [[2, 7]]);
+    }, _callee7, this, [[2, 7]]);
   }));
 
-  return function createChannel(_x5, _x6) {
-    return _ref3.apply(this, arguments);
+  return function createChannel(_x12, _x13) {
+    return _ref7.apply(this, arguments);
   };
 }();
 
@@ -3381,13 +3744,13 @@ var createChannel = exports.createChannel = function () {
 
 
 var deleteChannel = exports.deleteChannel = function () {
-  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
-    return _regenerator2.default.wrap(function _callee4$(_context4) {
+  var _ref8 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(req, res) {
+    return _regenerator2.default.wrap(function _callee8$(_context9) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context9.prev = _context9.next) {
           case 0:
-            _context4.prev = 0;
-            _context4.next = 3;
+            _context9.prev = 0;
+            _context9.next = 3;
             return ML.deleteChannel(delChParams, function (err, data) {
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(data); // successful response
@@ -3397,24 +3760,112 @@ var deleteChannel = exports.deleteChannel = function () {
             });
 
           case 3:
-            _context4.next = 8;
+            _context9.next = 8;
             break;
 
           case 5:
-            _context4.prev = 5;
-            _context4.t0 = _context4['catch'](0);
-            return _context4.abrupt('return', res.status(400).end(_context4.t0));
+            _context9.prev = 5;
+            _context9.t0 = _context9['catch'](0);
+            return _context9.abrupt('return', res.status(400).end(_context9.t0));
 
           case 8:
           case 'end':
-            return _context4.stop();
+            return _context9.stop();
         }
       }
-    }, _callee4, this, [[0, 5]]);
+    }, _callee8, this, [[0, 5]]);
   }));
 
-  return function deleteChannel(_x7, _x8) {
-    return _ref4.apply(this, arguments);
+  return function deleteChannel(_x14, _x15) {
+    return _ref8.apply(this, arguments);
+  };
+}();
+
+/*
+ * START Media Live Channel
+ */
+
+var startChannel = exports.startChannel = function () {
+  var _ref9 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee9(req, res) {
+    return _regenerator2.default.wrap(function _callee9$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            _context10.prev = 0;
+            _context10.next = 3;
+            return ML.startChannel({ ChannelId: req.params.ChannelId }, function (err, data) {
+              if (err) console.log(err, err.stack);
+              // an error occurred
+              else console.log(data); // successful response
+              return res.status(200).send({
+                message: data
+              });
+            });
+
+          case 3:
+            _context10.next = 8;
+            break;
+
+          case 5:
+            _context10.prev = 5;
+            _context10.t0 = _context10['catch'](0);
+            return _context10.abrupt('return', res.status(400).end(_context10.t0));
+
+          case 8:
+          case 'end':
+            return _context10.stop();
+        }
+      }
+    }, _callee9, this, [[0, 5]]);
+  }));
+
+  return function startChannel(_x16, _x17) {
+    return _ref9.apply(this, arguments);
+  };
+}();
+
+/*
+ * STOP Media Live Channel
+ */
+
+var stopChannel = exports.stopChannel = function () {
+  var _ref10 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee10(req, res) {
+    return _regenerator2.default.wrap(function _callee10$(_context11) {
+      while (1) {
+        switch (_context11.prev = _context11.next) {
+          case 0:
+            _context11.prev = 0;
+            _context11.next = 3;
+            return ML.stopChannel({
+              ChannelId: req.params.ChannelId
+            }, function (err, data) {
+              if (err) console.log(err, err.stack);
+              // an error occurred
+              else console.log(data); // successful response
+              return res.status(200).send({
+                message: data
+              });
+            });
+
+          case 3:
+            _context11.next = 8;
+            break;
+
+          case 5:
+            _context11.prev = 5;
+            _context11.t0 = _context11['catch'](0);
+            return _context11.abrupt('return', res.status(400).end(_context11.t0));
+
+          case 8:
+          case 'end':
+            return _context11.stop();
+        }
+      }
+    }, _callee10, this, [[0, 5]]);
+  }));
+
+  return function stopChannel(_x18, _x19) {
+    return _ref10.apply(this, arguments);
   };
 }();
 
@@ -3424,14 +3875,14 @@ var deleteChannel = exports.deleteChannel = function () {
 
 
 var getChannelList = exports.getChannelList = function () {
-  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
-    return _regenerator2.default.wrap(function _callee5$(_context5) {
+  var _ref11 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee11(req, res) {
+    return _regenerator2.default.wrap(function _callee11$(_context12) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context12.prev = _context12.next) {
           case 0:
             console.log('req in list/channel is :', req.body);
-            _context5.prev = 1;
-            _context5.next = 4;
+            _context12.prev = 1;
+            _context12.next = 4;
             return ML.listChannels(paramsCheck(listParams, req), function (err, data) {
               console.log('modified param list is ', listParams);
               if (err) console.log(err, err.stack); // an error occurred
@@ -3442,24 +3893,24 @@ var getChannelList = exports.getChannelList = function () {
             });
 
           case 4:
-            _context5.next = 9;
+            _context12.next = 9;
             break;
 
           case 6:
-            _context5.prev = 6;
-            _context5.t0 = _context5['catch'](1);
-            return _context5.abrupt('return', res.status(400).end(_context5.t0));
+            _context12.prev = 6;
+            _context12.t0 = _context12['catch'](1);
+            return _context12.abrupt('return', res.status(400).end(_context12.t0));
 
           case 9:
           case 'end':
-            return _context5.stop();
+            return _context12.stop();
         }
       }
-    }, _callee5, this, [[1, 6]]);
+    }, _callee11, this, [[1, 6]]);
   }));
 
-  return function getChannelList(_x9, _x10) {
-    return _ref5.apply(this, arguments);
+  return function getChannelList(_x20, _x21) {
+    return _ref11.apply(this, arguments);
   };
 }();
 
@@ -3469,14 +3920,14 @@ var getChannelList = exports.getChannelList = function () {
 
 
 var getBucketList = exports.getBucketList = function () {
-  var _ref6 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6(req, res) {
-    return _regenerator2.default.wrap(function _callee6$(_context6) {
+  var _ref12 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee12(req, res) {
+    return _regenerator2.default.wrap(function _callee12$(_context13) {
       while (1) {
-        switch (_context6.prev = _context6.next) {
+        switch (_context13.prev = _context13.next) {
           case 0:
             console.log('req in list/bucket is :', req.body);
-            _context6.prev = 1;
-            _context6.next = 4;
+            _context13.prev = 1;
+            _context13.next = 4;
             return S3.listBuckets(paramsCheck(params, req), function (err, data) {
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(data); // successful response
@@ -3486,59 +3937,108 @@ var getBucketList = exports.getBucketList = function () {
             });
 
           case 4:
-            _context6.next = 9;
+            _context13.next = 9;
             break;
 
           case 6:
-            _context6.prev = 6;
-            _context6.t0 = _context6['catch'](1);
-            return _context6.abrupt('return', res.status(400).end(_context6.t0));
+            _context13.prev = 6;
+            _context13.t0 = _context13['catch'](1);
+            return _context13.abrupt('return', res.status(400).end(_context13.t0));
 
           case 9:
           case 'end':
-            return _context6.stop();
+            return _context13.stop();
         }
       }
-    }, _callee6, this, [[1, 6]]);
+    }, _callee12, this, [[1, 6]]);
   }));
 
-  return function getBucketList(_x11, _x12) {
-    return _ref6.apply(this, arguments);
+  return function getBucketList(_x22, _x23) {
+    return _ref12.apply(this, arguments);
   };
 }();
 
-var _awsSdk = __webpack_require__(23);
+exports.uniqueID = uniqueID;
+exports.paramsCheck = paramsCheck;
+exports.insertInputToChannel = insertInputToChannel;
+exports.insertMediaPackageToChannel = insertMediaPackageToChannel;
+exports.createSocialStream = createSocialStream;
+
+var _awsSdk = __webpack_require__(17);
 
 var _awsSdk2 = _interopRequireDefault(_awsSdk);
 
-var _mediaLive = __webpack_require__(83);
+var _mediaLive = __webpack_require__(84);
 
 var _mediaLive2 = _interopRequireDefault(_mediaLive);
 
-var _mediaLive3 = __webpack_require__(84);
+var _mediaLive3 = __webpack_require__(85);
 
 var _mediaLive4 = _interopRequireDefault(_mediaLive3);
 
+var _mediaPackage = __webpack_require__(86);
+
+var _mediaPackage2 = _interopRequireDefault(_mediaPackage);
+
+var _ssm = __webpack_require__(87);
+
+var _ssm2 = _interopRequireDefault(_ssm);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Instantiate AWS SDK here
-var ML = new _awsSdk2.default.MediaLive(); /*
-                                           *
-                                             * WORKFLOW API CONTROLLER
-                                           *
-                                           */
+var _marked = /*#__PURE__*/_regenerator2.default.mark(uniqueID); /*
+                                                                 *
+                                                                   * WORKFLOW API CONTROLLER
+                                                                 *
+                                                                 */
 
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
 
+// Instantiate AWS SDK here
+var ML = new _awsSdk2.default.MediaLive();
+var MP = new _awsSdk2.default.MediaPackage();
 var S3 = new _awsSdk2.default.S3();
+var ssm = new _awsSdk2.default.SSM();
+
 var params = {};
 var delChParams = {
   ChannelId: '3062781' /* required */
 };
 
+function uniqueID(input) {
+  var userinput, randNum;
+  return _regenerator2.default.wrap(function uniqueID$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          userinput = input;
+
+          console.log("userinput is ", userinput);
+          randNum = Math.floor(Math.random() * 1000) + 1;
+
+          userinput = userinput + randNum;
+          return _context.abrupt('return', userinput);
+
+        case 5:
+        case 'end':
+          return _context.stop();
+      }
+    }
+  }, _marked, this);
+}
+
+function textChunk(input, chunkSize) {
+  console.log("Input received is :", input);
+  var data = input;
+  var chunkedData = data.substr(data.length - chunkSize);
+  console.log("chunked data is ", chunkedData);
+  return chunkedData;
+}
+
 // Generic function to handle user input, params modification and route management
 function paramsCheck(importParams, req) {
+  console.log("importParams in paramsCheck is: ", importParams);
   var params = importParams;
   console.log("req.body length is :", (0, _keys2.default)(req.body).length);
   if ((0, _keys2.default)(req.body).length == 0) {
@@ -3555,6 +4055,7 @@ function paramsCheck(importParams, req) {
 }
 
 function insertInputToChannel(channelParams, id) {
+  console.log("channelParams in insertInputToChannel is::: ", channelParams);
   console.log("id in insertInputToChannel is::: ", id);
   try {
     var _params = channelParams;
@@ -3571,8 +4072,105 @@ function insertInputToChannel(channelParams, id) {
   }
 }
 
+function insertMediaPackageToChannel(channelParams, mediaPackage) {
+  console.log("channelParams in insertMediaPackageToChannel is: ", channelParams);
+  console.log("mediaPackage in insertMediaPackageToChannel is: ", mediaPackage);
+
+  console.log('username in insetMediaPackageToChannel function 0 is :: ', mediaPackage.HlsIngest.IngestEndpoints[0].Username);
+  console.log('username in insetMediaPackageToChannel function 1 is :: ', mediaPackage.HlsIngest.IngestEndpoints[1].Username);
+  try {
+    var _params2 = channelParams;
+    _params2['Destinations'].push({
+      "Id": mediaPackage.Id,
+      "Settings": [{
+        "Url": mediaPackage.HlsIngest.IngestEndpoints[0].Url,
+        "Username": mediaPackage.HlsIngest.IngestEndpoints[0].Username,
+        "PasswordParam": '/api_mediaPackage/destination/' + mediaPackage.HlsIngest.IngestEndpoints[0].Username + '/HLS'
+      }, {
+        "Url": mediaPackage.HlsIngest.IngestEndpoints[1].Url,
+        "Username": mediaPackage.HlsIngest.IngestEndpoints[1].Username,
+        "PasswordParam": '/api_mediaPackage/destination/' + mediaPackage.HlsIngest.IngestEndpoints[1].Username + '/HLS'
+      }]
+    });
+    console.log("Reference mediaPackage ID is:: ", _params2['EncoderSettings']['OutputGroups'][0]);
+    //Link stream to destination
+    _params2['EncoderSettings']['OutputGroups'][0]['OutputGroupSettings']['HlsGroupSettings']['Destination']['DestinationRefId'] = mediaPackage.Id;
+    console.log("params[PasswordParam-0]", _params2.Destinations[0].Settings);
+    return _params2;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function createSocialStream(channelParams, req) {
+  console.log("channelParams in createSocialStream is ", channelParams);
+  console.log("req in createSocialStream is ", req);
+
+  try {
+    var _params3 = channelParams;
+    var socialSSMParams = [{
+      "Username": req.body.Username,
+      "Password": req.body.streamKey
+    }, {
+      "Username": req.body.Username,
+      "Password": req.body.backupStreamKey
+    }];
+    //create SSM Params with MediaPackage response
+    createUniqueSSMParams(_ssm2.default, socialSSMParams);
+    //assign values to Destination for socail media stream
+    _params3['Destinations'].push({
+      "Id": req.body.socialId,
+      "Settings": [{
+        "StreamName": req.body.streamKey,
+        "Url": req.body.Url,
+        "Username": req.body.Username,
+        "PasswordParam": '/api_mediaPackage/destination/' + req.body.Username + '-' + textChunk(req.body.streamKey, 16) + '/HLS'
+      }, {
+        "StreamName": req.body.backupStreamKey,
+        "Url": req.body.Url,
+        "Username": req.body.Username,
+        "PasswordParam": '/api_mediaPackage/destination/' + req.body.Username + '-' + textChunk(req.body.backupStreamKey, 16) + '/HLS'
+      }]
+    });
+    //Link stream to destination
+    _params3['EncoderSettings']['OutputGroups'].push({
+      'OutputGroupSettings': {
+        RtmpGroupSettings: {
+          //  AuthenticationScheme: AKAMAI | COMMON,
+          //  CacheFullBehavior: DISCONNECT_IMMEDIATELY | WAIT_FOR_SERVER,
+          //  CacheLength: 'NUMBER_VALUE',
+          //  CaptionData: ALL | FIELD1_608 | FIELD1_AND_FIELD2_608,
+          //  InputLossAction: EMIT_OUTPUT | PAUSE_OUTPUT,
+          //  RestartDelay: 'NUMBER_VALUE'
+        }
+      },
+      'Outputs': [{
+        'VideoDescriptionName': 'video_1080p30',
+        'AudioDescriptionNames': ['audio_1'],
+        'CaptionDescriptionNames': [],
+        'OutputSettings': {
+          RtmpOutputSettings: {
+            Destination: {
+              /* required */
+              DestinationRefId: req.body.socialId //'STRING_VALUE'
+            },
+            CertificateMode: 'SELF_SIGNED', //SELF_SIGNED | VERIFY_AUTHENTICITY,
+            ConnectionRetryInterval: 5, //'NUMBER_VALUE',
+            NumRetries: 5 //'NUMBER_VALUE'
+          }
+        }
+      }]
+      //  'Name': req.body.socialId
+    });
+    console.log(" params['Destinations'] in social media stream is:: ", _params3['Destinations']);
+    return _params3;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3596,7 +4194,7 @@ var params = {
 exports.default = params;
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4151,7 +4749,66 @@ var params = {
 exports.default = params;
 
 /***/ }),
-/* 85 */
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/* eslint-disable comma-dangle */
+/* eslint-disable quote-props */
+
+var params = {
+    Id: 'destination-api', /* required */
+    Description: 'API Driven media package',
+    Tags: {
+        'medialive': 'api-driven'
+        /* '<__string>': ... */
+    }
+};
+
+exports.default = params;
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/* eslint-disable comma-dangle */
+/* eslint-disable quote-props */
+
+var params = {
+    Name: 'STRING_VALUE',
+    /* required */
+    Type: 'SecureString', // Type: String | StringList | SecureString, /* required */
+    /* required */
+    Value: 'STRING_VALUE',
+    /* required */
+    // AllowedPattern: 'STRING_VALUE',
+    Description: 'programatically stored mediapackage channels password',
+    KeyId: 'alias/aws/ssm',
+    // Overwrite: true || false,
+    // Policies: 'STRING_VALUE',
+    Tags: [{
+        Key: 'MEDIA_PACKAGE',
+        /* required */
+        Value: 'API_DRIVEN_PARAMS' /* required */
+    }],
+    Tier: 'Standard' //Tier: Standard | Advanced
+};
+
+exports.default = params;
+
+/***/ }),
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4163,7 +4820,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(86);
+var _controller = __webpack_require__(89);
 
 var ChannelAWSController = _interopRequireWildcard(_controller);
 
@@ -4193,11 +4850,16 @@ ChannelAWSRouter.route('/channels').post(ChannelAWSController.addChannel);
 // Delete a Channel by cuid
 // ChannelAWSRouter.route('/channels/:cuid').delete(ChannelAWSController.deleteChannel);
 
+// Start a MediaLive Channel
+ChannelAWSRouter.route('/channels/start/:ChannelId').post(ChannelAWSController.startChannel);
+
+// Stop a MediaLive Channel
+ChannelAWSRouter.route('/channels/stop/:ChannelId').post(ChannelAWSController.stopChannel);
 
 exports.default = ChannelAWSRouter;
 
 /***/ }),
-/* 86 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4206,17 +4868,17 @@ exports.default = ChannelAWSRouter;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getChannel = exports.deleteChannel = exports.addChannel = undefined;
+exports.stopChannel = exports.startChannel = exports.getChannel = exports.deleteChannel = exports.addChannel = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _keys = __webpack_require__(15);
+var _keys = __webpack_require__(13);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -4232,7 +4894,7 @@ var addChannel = exports.addChannel = function () {
             console.log('req in create/channel is :', req.body);
             _context.prev = 1;
             _context.next = 4;
-            return ML.createChannel(paramsCheck(_paramsMedialive2.default, req), function (err, channelData) {
+            return ML.createChannel(paramsCheck(insertInputToChannel(_paramsMedialive2.default, req.body.InputId), req), function (err, channelData) {
               if (err) console.log(err, err.stack); // an error occurred
               else console.log(channelData); // successful response
               return res.status(200).send({
@@ -4350,15 +5012,103 @@ var getChannel = exports.getChannel = function () {
   };
 }();
 
-var _awsSdk = __webpack_require__(23);
+/*
+ * START Media Live Channel
+ */
+
+var startChannel = exports.startChannel = function () {
+  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
+    return _regenerator2.default.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.prev = 0;
+            _context4.next = 3;
+            return ML.startChannel({ ChannelId: req.params.ChannelId }, function (err, data) {
+              if (err) console.log(err, err.stack);
+              // an error occurred
+              else console.log(data); // successful response
+              return res.status(200).send({
+                message: data
+              });
+            });
+
+          case 3:
+            _context4.next = 8;
+            break;
+
+          case 5:
+            _context4.prev = 5;
+            _context4.t0 = _context4['catch'](0);
+            return _context4.abrupt('return', res.status(400).end(_context4.t0));
+
+          case 8:
+          case 'end':
+            return _context4.stop();
+        }
+      }
+    }, _callee4, this, [[0, 5]]);
+  }));
+
+  return function startChannel(_x7, _x8) {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+/*
+ * STOP Media Live Channel
+ */
+
+var stopChannel = exports.stopChannel = function () {
+  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
+    return _regenerator2.default.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return ML.stopChannel({
+              ChannelId: req.params.ChannelId
+            }, function (err, data) {
+              if (err) console.log(err, err.stack);
+              // an error occurred
+              else console.log(data); // successful response
+              return res.status(200).send({
+                message: data
+              });
+            });
+
+          case 3:
+            _context5.next = 8;
+            break;
+
+          case 5:
+            _context5.prev = 5;
+            _context5.t0 = _context5['catch'](0);
+            return _context5.abrupt('return', res.status(400).end(_context5.t0));
+
+          case 8:
+          case 'end':
+            return _context5.stop();
+        }
+      }
+    }, _callee5, this, [[0, 5]]);
+  }));
+
+  return function stopChannel(_x9, _x10) {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
+var _awsSdk = __webpack_require__(17);
 
 var _awsSdk2 = _interopRequireDefault(_awsSdk);
 
-var _paramsMedialive = __webpack_require__(87);
+var _paramsMedialive = __webpack_require__(90);
 
 var _paramsMedialive2 = _interopRequireDefault(_paramsMedialive);
 
-var _paramsMedialive3 = __webpack_require__(88);
+var _paramsMedialive3 = __webpack_require__(91);
 
 var _paramsMedialive4 = _interopRequireDefault(_paramsMedialive3);
 
@@ -4413,7 +5163,7 @@ function insertInputToChannel(channelParams, id) {
 }
 
 /***/ }),
-/* 87 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4968,7 +5718,7 @@ var params = {
 exports.default = params;
 
 /***/ }),
-/* 88 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4984,7 +5734,7 @@ var params = {
 exports.default = params;
 
 /***/ }),
-/* 89 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4996,7 +5746,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(90);
+var _controller = __webpack_require__(93);
 
 var InputAWSController = _interopRequireWildcard(_controller);
 
@@ -5030,7 +5780,7 @@ InputAWSRouter.route('/inputs').post(InputAWSController.addInput);
 exports.default = InputAWSRouter;
 
 /***/ }),
-/* 90 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5041,15 +5791,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.addInput = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _keys = __webpack_require__(15);
+var _keys = __webpack_require__(13);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -5096,11 +5846,11 @@ var addInput = exports.addInput = function () {
   };
 }();
 
-var _awsSdk = __webpack_require__(23);
+var _awsSdk = __webpack_require__(17);
 
 var _awsSdk2 = _interopRequireDefault(_awsSdk);
 
-var _paramsMedialive = __webpack_require__(91);
+var _paramsMedialive = __webpack_require__(94);
 
 var _paramsMedialive2 = _interopRequireDefault(_paramsMedialive);
 
@@ -5147,7 +5897,7 @@ function insertInputToChannel(channelParams, id) {
 }
 
 /***/ }),
-/* 91 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5171,7 +5921,196 @@ var params = {
 exports.default = params;
 
 /***/ }),
-/* 92 */
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _express = __webpack_require__(1);
+
+var _controller = __webpack_require__(96);
+
+var MpchannelAWSController = _interopRequireWildcard(_controller);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/*
+    * AWS MPCHANNEL Mpchannel Routes
+*
+* This contains Routes for the AWS Resources.
+*/
+
+var MpchannelAWSRouter = new _express.Router();
+
+// Get allMpchannels
+//MpchannelAWSRouter.route('/mpchannels').get(MpchannelAWSController.getMpchannel);
+
+// Get oneMpchannel by cuid
+//MpchannelAWSRouter.route('/mpchannels/:cuid').get(MpchannelAWSController.getMpchannelById);
+
+// Create A New Media LiveMpchannel for Input,Channel and Media Package
+MpchannelAWSRouter.route('/mpchannels').post(MpchannelAWSController.addMpchannel);
+
+// Update aMpchannel
+//MpchannelAWSRouter.route('/mpchannels/:cuid').put(MpchannelAWSController.updateOneMpchannel);
+
+
+// Delete aMpchannel by cuid
+//MpchannelAWSRouter.route('/mpchannels/:cuid').delete(MpchannelAWSController.deleteMpchannel);
+
+
+exports.default = MpchannelAWSRouter;
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addMpchannel = undefined;
+
+var _regenerator = __webpack_require__(3);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = __webpack_require__(2);
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _keys = __webpack_require__(13);
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var addMpchannel = exports.addMpchannel = function () {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
+    return _regenerator2.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            console.log("req.body is", req.body);
+            _context.prev = 1;
+            _context.next = 4;
+            return MEDIAPACKAGE.createChannel(paramsCheck(_params2.default, req), function (err, mpchannelData) {
+              if (err) console.log(err, err.stack); // an error occurred
+              else console.log(mpchannelData); // successful response
+              return res.status(200).send({
+                message: mpchannelData
+              });
+            });
+
+          case 4:
+            _context.next = 9;
+            break;
+
+          case 6:
+            _context.prev = 6;
+            _context.t0 = _context['catch'](1);
+            return _context.abrupt('return', res.status(400).end(_context.t0));
+
+          case 9:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this, [[1, 6]]);
+  }));
+
+  return function addMpchannel(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+var _awsSdk = __webpack_require__(17);
+
+var _awsSdk2 = _interopRequireDefault(_awsSdk);
+
+var _params = __webpack_require__(97);
+
+var _params2 = _interopRequireDefault(_params);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Instantiate AWS SDK here
+/*
+*
+  * Mpchannel AWS API CONTROLLER
+*
+*/
+
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
+
+var MEDIAPACKAGE = new _awsSdk2.default.MediaPackage();
+
+// Generic function to handle user input, params modification and route management
+function paramsCheck(importParams, req) {
+  var params = importParams;
+  console.log("req.body length is :", (0, _keys2.default)(req.body).length);
+  if ((0, _keys2.default)(req.body).length == 0) {
+    return importParams;
+  } else {
+    (0, _keys2.default)(req.body).map(function (key) {
+      console.log("key is ", key);
+      if (key in params) {
+        params[key] = req.body[key];
+      }
+    });
+    return params;
+  }
+}
+
+function insertInputToChannel(channelParams, id) {
+  console.log("id in insertInputToChannel is::: ", id);
+  try {
+    var params = channelParams;
+    params['InputAttachments'] = [{
+      'InputId': id,
+      'InputSettings': {
+        'SourceEndBehavior': 'CONTINUE',
+        'NetworkInputSettings': {}
+      }
+    }];
+    return params;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/* eslint-disable comma-dangle */
+/* eslint-disable quote-props */
+
+var params = {
+    Id: 'destination-api', /* required */
+    Description: 'API Driven media package',
+    Tags: {
+        'medialive': 'api-driven'
+        /* '<__string>': ... */
+    }
+};
+
+exports.default = params;
+
+/***/ }),
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5191,7 +6130,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(16);
 
-var _App = __webpack_require__(93);
+var _App = __webpack_require__(99);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -5236,7 +6175,7 @@ exports.default = (0, _jsx3.default)(_reactRouter.Route, {
 }));
 
 /***/ }),
-/* 93 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5287,19 +6226,19 @@ var _App = {
 
 var _App2 = _interopRequireDefault(_App);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(23);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _Header = __webpack_require__(94);
+var _Header = __webpack_require__(100);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Footer = __webpack_require__(95);
+var _Footer = __webpack_require__(101);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _AppActions = __webpack_require__(18);
+var _AppActions = __webpack_require__(19);
 
 var _IntlActions = __webpack_require__(33);
 
@@ -5382,7 +6321,7 @@ function mapStateToProps(store) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ }),
-/* 94 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5472,7 +6411,7 @@ Header.contextTypes = {
 exports.default = Header;
 
 /***/ }),
-/* 95 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5529,7 +6468,7 @@ function Footer() {
 exports.default = Footer;
 
 /***/ }),
-/* 96 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5551,7 +6490,7 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _PostListItem = __webpack_require__(97);
+var _PostListItem = __webpack_require__(103);
 
 var _PostListItem2 = _interopRequireDefault(_PostListItem);
 
@@ -5574,7 +6513,7 @@ function PostList(props) {
 exports.default = PostList;
 
 /***/ }),
-/* 97 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5649,7 +6588,7 @@ function PostListItem(props) {
 exports.default = PostListItem;
 
 /***/ }),
-/* 98 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5766,7 +6705,7 @@ var PostCreateWidget = exports.PostCreateWidget = function (_Component) {
 exports.default = (0, _reactIntl.injectIntl)(PostCreateWidget);
 
 /***/ }),
-/* 99 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5777,7 +6716,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.fetchComponentData = fetchComponentData;
 
-var _promiseUtils = __webpack_require__(100);
+var _promiseUtils = __webpack_require__(106);
 
 function fetchComponentData(store, components, params) {
   var needs = components.reduce(function (prev, current) {
@@ -5793,7 +6732,7 @@ function fetchComponentData(store, components, params) {
   */
 
 /***/ }),
-/* 100 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5803,7 +6742,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promise = __webpack_require__(14);
+var _promise = __webpack_require__(15);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -5832,7 +6771,7 @@ function sequence(items, consumer) {
 }
 
 /***/ }),
-/* 101 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5844,7 +6783,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _post = __webpack_require__(102);
+var _post = __webpack_require__(108);
 
 var PostController = _interopRequireWildcard(_post);
 
@@ -5867,7 +6806,7 @@ postRouter.route('/posts/:cuid').delete(PostController.deletePost);
 exports.default = postRouter;
 
 /***/ }),
-/* 102 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5976,7 +6915,7 @@ function deletePost(req, res) {
 }
 
 /***/ }),
-/* 103 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5991,23 +6930,23 @@ var _post = __webpack_require__(37);
 
 var _post2 = _interopRequireDefault(_post);
 
-var _customer = __webpack_require__(104);
+var _customer = __webpack_require__(110);
 
 var _customer2 = _interopRequireDefault(_customer);
 
-var _acl = __webpack_require__(105);
+var _acl = __webpack_require__(111);
 
 var _acl2 = _interopRequireDefault(_acl);
 
-var _cart = __webpack_require__(106);
+var _cart = __webpack_require__(112);
 
 var _cart2 = _interopRequireDefault(_cart);
 
-var _recipe = __webpack_require__(107);
+var _recipe = __webpack_require__(113);
 
 var _recipe2 = _interopRequireDefault(_recipe);
 
-var _role = __webpack_require__(108);
+var _role = __webpack_require__(114);
 
 var _role2 = _interopRequireDefault(_role);
 
@@ -6054,7 +6993,7 @@ function postData() {
 // import Chef from './models/chef';
 
 /***/ }),
-/* 104 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6084,7 +7023,7 @@ var customerSchema = new Schema({
 exports.default = _mongoose2.default.model('Customer', customerSchema);
 
 /***/ }),
-/* 105 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6114,7 +7053,7 @@ var aclSchema = new Schema({
 exports.default = _mongoose2.default.model('Acl', aclSchema);
 
 /***/ }),
-/* 106 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6144,7 +7083,7 @@ var cartSchema = new Schema({
 exports.default = _mongoose2.default.model('Cart', cartSchema);
 
 /***/ }),
-/* 107 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6174,7 +7113,7 @@ var recipeSchema = new Schema({
 exports.default = _mongoose2.default.model('Recipe', recipeSchema);
 
 /***/ }),
-/* 108 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6204,7 +7143,7 @@ var roleSchema = new Schema({
 exports.default = _mongoose2.default.model('Role', roleSchema);
 
 /***/ }),
-/* 109 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6216,7 +7155,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _user = __webpack_require__(110);
+var _user = __webpack_require__(116);
 
 var router = (0, _express.Router)();
 
@@ -6226,7 +7165,7 @@ router.put('/', _user.updateMe);
 exports.default = router;
 
 /***/ }),
-/* 110 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6237,11 +7176,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updateMe = exports.me = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -6295,13 +7234,13 @@ var updateMe = exports.updateMe = function () {
 }();
 
 /***/ }),
-/* 111 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = require("bcrypt");
 
 /***/ }),
-/* 112 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6312,25 +7251,25 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.protect = exports.signin = exports.signup = exports.verifyToken = exports.newToken = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _promise = __webpack_require__(14);
+var _promise = __webpack_require__(15);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _config = __webpack_require__(21);
+var _config = __webpack_require__(22);
 
 var _config2 = _interopRequireDefault(_config);
 
 var _user = __webpack_require__(38);
 
-var _jsonwebtoken = __webpack_require__(113);
+var _jsonwebtoken = __webpack_require__(119);
 
 var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
 
@@ -6527,13 +7466,13 @@ var protect = exports.protect = function () {
 }();
 
 /***/ }),
-/* 113 */
+/* 119 */
 /***/ (function(module, exports) {
 
 module.exports = require("jsonwebtoken");
 
 /***/ }),
-/* 114 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6545,7 +7484,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(115);
+var _controller = __webpack_require__(121);
 
 var ChefController = _interopRequireWildcard(_controller);
 
@@ -6577,7 +7516,7 @@ ChefRouter.route('/chefs/:cuid').delete(ChefController.deleteChef);
 exports.default = ChefRouter;
 
 /***/ }),
-/* 115 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6588,11 +7527,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteChef = exports.updateOneChef = exports.getChefById = exports.addChef = exports.getChef = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -6892,7 +7831,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 116 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7004,7 +7943,7 @@ function chefData() {
   */
 
 /***/ }),
-/* 117 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7016,7 +7955,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(118);
+var _controller = __webpack_require__(124);
 
 var FoodController = _interopRequireWildcard(_controller);
 
@@ -7048,7 +7987,7 @@ FoodRouter.route('/foods/:cuid').delete(FoodController.deleteFood);
 exports.default = FoodRouter;
 
 /***/ }),
-/* 118 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7059,11 +7998,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteFood = exports.updateOneFood = exports.getFoodById = exports.addFood = exports.getFood = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -7363,7 +8302,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 119 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8517,7 +9456,7 @@ function foodData() {
   */
 
 /***/ }),
-/* 120 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8529,7 +9468,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(121);
+var _controller = __webpack_require__(127);
 
 var ShopcartController = _interopRequireWildcard(_controller);
 
@@ -8561,7 +9500,7 @@ ShopcartRouter.route('/shopcarts/:cuid').delete(ShopcartController.deleteShopcar
 exports.default = ShopcartRouter;
 
 /***/ }),
-/* 121 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8572,11 +9511,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteShopcart = exports.updateOneShopcart = exports.getShopcartById = exports.addShopcart = exports.getShopcart = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -8876,7 +9815,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 122 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8949,7 +9888,7 @@ function shopcartData() {
   */
 
 /***/ }),
-/* 123 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8961,7 +9900,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(124);
+var _controller = __webpack_require__(130);
 
 var LocationController = _interopRequireWildcard(_controller);
 
@@ -8993,7 +9932,7 @@ LocationRouter.route('/locations/:cuid').delete(LocationController.deleteLocatio
 exports.default = LocationRouter;
 
 /***/ }),
-/* 124 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9004,11 +9943,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteLocation = exports.updateOneLocation = exports.getLocationById = exports.addLocation = exports.getLocation = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -9308,7 +10247,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 125 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9319,7 +10258,7 @@ Object.defineProperty(exports,"__esModule",{value:true});exports.default=locatio
 */
 
 /***/ }),
-/* 126 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9331,7 +10270,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(127);
+var _controller = __webpack_require__(133);
 
 var OrderController = _interopRequireWildcard(_controller);
 
@@ -9363,7 +10302,7 @@ OrderRouter.route('/orders/:cuid').delete(OrderController.deleteOrder);
 exports.default = OrderRouter;
 
 /***/ }),
-/* 127 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9374,11 +10313,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteOrder = exports.updateOneOrder = exports.getOrderById = exports.addOrder = exports.getOrder = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -9660,7 +10599,7 @@ var deleteOrder = exports.deleteOrder = function () {
   };
 }();
 
-var _model = __webpack_require__(17);
+var _model = __webpack_require__(18);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -9679,7 +10618,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 128 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9690,7 +10629,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = orderData;
 
-var _model = __webpack_require__(17);
+var _model = __webpack_require__(18);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -9729,7 +10668,7 @@ function orderData() {
   */
 
 /***/ }),
-/* 129 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9741,7 +10680,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(130);
+var _controller = __webpack_require__(136);
 
 var ChannelController = _interopRequireWildcard(_controller);
 
@@ -9773,7 +10712,7 @@ ChannelRouter.route('/channels/:cuid').delete(ChannelController.deleteChannel);
 exports.default = ChannelRouter;
 
 /***/ }),
-/* 130 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9784,11 +10723,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteChannel = exports.updateOneChannel = exports.getChannelById = exports.addChannel = exports.getChannel = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -10089,7 +11028,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 131 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10131,7 +11070,7 @@ function channelData() {
   */
 
 /***/ }),
-/* 132 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10143,7 +11082,408 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(133);
+var _controller = __webpack_require__(139);
+
+var MpchannelController = _interopRequireWildcard(_controller);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/*
+* Mpchannel Routes
+*
+* This contains defalut Mpchannel Route for the API.
+*/
+
+var MpchannelRouter = new _express.Router();
+
+// Get all Mpchannels
+MpchannelRouter.route('/mpchannels').get(MpchannelController.getMpchannel);
+
+// Get one Mpchannel by cuid
+MpchannelRouter.route('/mpchannels/:cuid').get(MpchannelController.getMpchannelById);
+
+// Add a new Mpchannel
+MpchannelRouter.route('/mpchannels').post(MpchannelController.addMpchannel);
+
+// Update a Mpchannel
+MpchannelRouter.route('/mpchannels/:cuid').put(MpchannelController.updateOneMpchannel);
+
+// Delete a Mpchannel by cuid
+MpchannelRouter.route('/mpchannels/:cuid').delete(MpchannelController.deleteMpchannel);
+
+exports.default = MpchannelRouter;
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.deleteMpchannel = exports.updateOneMpchannel = exports.getMpchannelById = exports.addMpchannel = exports.getMpchannel = undefined;
+
+var _regenerator = __webpack_require__(3);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = __webpack_require__(2);
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+/**
+* Get all mpchannels
+* @param req
+* @param res
+* @returns void
+*/
+
+/*
+* Mpchannel Controller
+*
+* This contains default Mpchannel controller.
+*/
+
+var getMpchannel = exports.getMpchannel = function () {
+    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
+        var doc;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        _context.prev = 0;
+                        _context.next = 3;
+                        return _model2.default.find({
+                            // {createdBy: req.user._id}
+                        }).sort('-dateAdded').lean().exec();
+
+                    case 3:
+                        doc = _context.sent;
+                        return _context.abrupt('return', res.status(200).json({ data: doc }));
+
+                    case 7:
+                        _context.prev = 7;
+                        _context.t0 = _context['catch'](0);
+
+                        console.error(_context.t0);
+                        return _context.abrupt('return', res.status(400).send(_context.t0));
+
+                    case 11:
+                    case 'end':
+                        return _context.stop();
+                }
+            }
+        }, _callee, this, [[0, 7]]);
+    }));
+
+    return function getMpchannel(_x, _x2) {
+        return _ref.apply(this, arguments);
+    };
+}();
+
+/**
+* Save a mpchannel
+* @param req
+* @param res
+* @returns void
+*/
+
+var addMpchannel = exports.addMpchannel = function () {
+    var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
+        var sanitizedMpchannel, mpchannel;
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+            while (1) {
+                switch (_context2.prev = _context2.next) {
+                    case 0:
+                        _context2.prev = 0;
+
+                        // Save model data for Sanitization
+                        // const createdBy = req.user._id
+                        // console.log('createdBy', createdBy);
+                        sanitizedMpchannel = new _model2.default(req.body);
+
+                        // Let's sanitize inputs
+
+                        sanitizedMpchannel.item = (0, _sanitizeHtml2.default)(sanitizedMpchannel.item);
+                        // sanitizedMpchannel.info = sanitizeHtml(sanitizedMpchannel.info); --}}
+                        // sanitizedMpchannel.created_by = sanitizeHtml(sanitizedMpchannel.created_by);
+                        // sanitizedMpchannel.created_at = sanitizeHtml(sanitizedMpchannel.created_at);
+
+                        // Add slug data for specific field
+                        sanitizedMpchannel.slug = (0, _limax2.default)(sanitizedMpchannel.item.toLowerCase(), { lowercase: true });
+
+                        // Add cuid for the model
+                        sanitizedMpchannel.cuid = (0, _cuid2.default)();
+
+                        // Make asynchronous call to save the model to Database
+                        _context2.next = 7;
+                        return _model2.default.create(sanitizedMpchannel);
+
+                    case 7:
+                        mpchannel = _context2.sent;
+                        return _context2.abrupt('return', res.status(201).json(mpchannel.toJSON()));
+
+                    case 11:
+                        _context2.prev = 11;
+                        _context2.t0 = _context2['catch'](0);
+
+                        console.log(_context2.t0);
+                        return _context2.abrupt('return', res.status(400).send(_context2.t0));
+
+                    case 15:
+                    case 'end':
+                        return _context2.stop();
+                }
+            }
+        }, _callee2, this, [[0, 11]]);
+    }));
+
+    return function addMpchannel(_x3, _x4) {
+        return _ref2.apply(this, arguments);
+    };
+}();
+
+/**
+* Get a single mpchannel By Id
+* @param req
+* @param res
+* @returns void
+*/
+
+var getMpchannelById = exports.getMpchannelById = function () {
+    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(req, res) {
+        var doc;
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+            while (1) {
+                switch (_context3.prev = _context3.next) {
+                    case 0:
+                        _context3.prev = 0;
+
+                        console.log("cuid is :", req.params.cuid);
+                        _context3.next = 4;
+                        return _model2.default.findOne({
+                            // createdBy: req.user._id,
+                            cuid: req.params.cuid
+                            // _id: req.params.id
+                        }).lean().exec();
+
+                    case 4:
+                        doc = _context3.sent;
+
+                        if (doc) {
+                            _context3.next = 7;
+                            break;
+                        }
+
+                        return _context3.abrupt('return', res.status(400).end());
+
+                    case 7:
+                        return _context3.abrupt('return', res.status(200).json({ data: doc }));
+
+                    case 10:
+                        _context3.prev = 10;
+                        _context3.t0 = _context3['catch'](0);
+                        return _context3.abrupt('return', res.status(400).send(_context3.t0));
+
+                    case 13:
+                    case 'end':
+                        return _context3.stop();
+                }
+            }
+        }, _callee3, this, [[0, 10]]);
+    }));
+
+    return function getMpchannelById(_x5, _x6) {
+        return _ref3.apply(this, arguments);
+    };
+}();
+
+/**
+* Update a mpchannel
+* @param req
+* @param res
+* @returns void
+*/
+
+var updateOneMpchannel = exports.updateOneMpchannel = function () {
+    var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
+        var updatedDoc;
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
+            while (1) {
+                switch (_context4.prev = _context4.next) {
+                    case 0:
+                        _context4.prev = 0;
+                        _context4.next = 3;
+                        return _model2.default.findOneAndUpdate({
+                            // createdBy: req.user._id,
+                            cuid: req.params.cuid
+                            // _id: req.params.id
+                        }, req.body, { new: true }).lean().exec();
+
+                    case 3:
+                        updatedDoc = _context4.sent;
+
+                        if (updatedDoc) {
+                            _context4.next = 6;
+                            break;
+                        }
+
+                        return _context4.abrupt('return', res.status(400).end());
+
+                    case 6:
+                        return _context4.abrupt('return', res.status(200).json({ data: updatedDoc }));
+
+                    case 9:
+                        _context4.prev = 9;
+                        _context4.t0 = _context4['catch'](0);
+
+                        console.error(_context4.t0);
+                        return _context4.abrupt('return', res.status(400).send(_context4.t0));
+
+                    case 13:
+                    case 'end':
+                        return _context4.stop();
+                }
+            }
+        }, _callee4, this, [[0, 9]]);
+    }));
+
+    return function updateOneMpchannel(_x7, _x8) {
+        return _ref4.apply(this, arguments);
+    };
+}();
+
+/**
+* Delete a mpchannel
+* @param req
+* @param res
+* @returns void
+*/
+
+var deleteMpchannel = exports.deleteMpchannel = function () {
+    var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
+        var removed;
+        return _regenerator2.default.wrap(function _callee5$(_context5) {
+            while (1) {
+                switch (_context5.prev = _context5.next) {
+                    case 0:
+                        _context5.prev = 0;
+                        _context5.next = 3;
+                        return _model2.default.findOneAndRemove({
+                            // createdBy:req.user._id,
+                            cuid: req.params.cuid
+                            // _id:req.params.id,
+                        });
+
+                    case 3:
+                        removed = _context5.sent;
+
+                        if (removed) {
+                            _context5.next = 6;
+                            break;
+                        }
+
+                        return _context5.abrupt('return', res.status(400).end());
+
+                    case 6:
+                        return _context5.abrupt('return', res.status(200).json({ data: removed }));
+
+                    case 9:
+                        _context5.prev = 9;
+                        _context5.t0 = _context5['catch'](0);
+
+                        console.error(_context5.t0);
+                        return _context5.abrupt('return', res.status(400).send(_context5.t0));
+
+                    case 13:
+                    case 'end':
+                        return _context5.stop();
+                }
+            }
+        }, _callee5, this, [[0, 9]]);
+    }));
+
+    return function deleteMpchannel(_x9, _x10) {
+        return _ref5.apply(this, arguments);
+    };
+}();
+
+var _model = __webpack_require__(44);
+
+var _model2 = _interopRequireDefault(_model);
+
+var _cuid = __webpack_require__(4);
+
+var _cuid2 = _interopRequireDefault(_cuid);
+
+var _limax = __webpack_require__(5);
+
+var _limax2 = _interopRequireDefault(_limax);
+
+var _sanitizeHtml = __webpack_require__(6);
+
+var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = mpchannelData;
+
+var _model = __webpack_require__(44);
+
+var _model2 = _interopRequireDefault(_model);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mpchannelData() {
+    _model2.default.count().exec(function (err, count) {
+        if (count > 0) {
+            return;
+        }
+        _model2.default.find({}).remove(function () {
+            _model2.default.create({
+                item: 'Mpchannel item',
+                info: 'Lorem ipsssum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                createdBy: 'Mpchannel',
+                created_at: '2008-12-17T11:01:23.460Z'
+            }, function (error) {
+                if (!error) {
+                    console.log('ready to go!');
+                }
+            });
+        });
+    });
+} /*
+  * Mpchannel dummy data
+  *
+  * This contains defalut Mpchannel dummy data.
+  */
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _express = __webpack_require__(1);
+
+var _controller = __webpack_require__(142);
 
 var InputController = _interopRequireWildcard(_controller);
 
@@ -10175,7 +11515,7 @@ InputRouter.route('/inputs/:cuid').delete(InputController.deleteInput);
 exports.default = InputRouter;
 
 /***/ }),
-/* 133 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10186,11 +11526,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteInput = exports.updateOneInput = exports.getInputById = exports.addInput = exports.getInput = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -10471,7 +11811,7 @@ var deleteInput = exports.deleteInput = function () {
     };
 }();
 
-var _model = __webpack_require__(44);
+var _model = __webpack_require__(45);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -10490,7 +11830,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 134 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10501,7 +11841,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = inputData;
 
-var _model = __webpack_require__(44);
+var _model = __webpack_require__(45);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -10532,7 +11872,7 @@ function inputData() {
   */
 
 /***/ }),
-/* 135 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10544,7 +11884,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(136);
+var _controller = __webpack_require__(145);
 
 var WorkflowController = _interopRequireWildcard(_controller);
 
@@ -10576,7 +11916,7 @@ WorkflowRouter.route('/workflows/:cuid').delete(WorkflowController.deleteWorkflo
 exports.default = WorkflowRouter;
 
 /***/ }),
-/* 136 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10587,11 +11927,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteWorkflow = exports.updateOneWorkflow = exports.getWorkflowById = exports.addWorkflow = exports.getWorkflow = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -10873,7 +12213,7 @@ var deleteWorkflow = exports.deleteWorkflow = function () {
     };
 }();
 
-var _model = __webpack_require__(45);
+var _model = __webpack_require__(46);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -10892,7 +12232,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 137 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10903,7 +12243,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = workflowData;
 
-var _model = __webpack_require__(45);
+var _model = __webpack_require__(46);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -10934,7 +12274,7 @@ function workflowData() {
   */
 
 /***/ }),
-/* 138 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10946,7 +12286,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(139);
+var _controller = __webpack_require__(148);
 
 var PencilController = _interopRequireWildcard(_controller);
 
@@ -10978,7 +12318,7 @@ PencilRouter.route('/pencils/:cuid').delete(PencilController.deletePencil);
 exports.default = PencilRouter;
 
 /***/ }),
-/* 139 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10989,11 +12329,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deletePencil = exports.updateOnePencil = exports.getPencilById = exports.addPencil = exports.getPencil = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -11274,7 +12614,7 @@ var deletePencil = exports.deletePencil = function () {
   };
 }();
 
-var _model = __webpack_require__(46);
+var _model = __webpack_require__(47);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -11293,7 +12633,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 140 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11304,7 +12644,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = pencilData;
 
-var _model = __webpack_require__(46);
+var _model = __webpack_require__(47);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -11335,7 +12675,7 @@ function pencilData() {
   */
 
 /***/ }),
-/* 141 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11347,7 +12687,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(142);
+var _controller = __webpack_require__(151);
 
 var BookController = _interopRequireWildcard(_controller);
 
@@ -11379,7 +12719,7 @@ BookRouter.route('/books/:cuid').delete(BookController.deleteBook);
 exports.default = BookRouter;
 
 /***/ }),
-/* 142 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11390,11 +12730,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteBook = exports.updateOneBook = exports.getBookById = exports.addBook = exports.getBook = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -11675,7 +13015,7 @@ var deleteBook = exports.deleteBook = function () {
   };
 }();
 
-var _model = __webpack_require__(47);
+var _model = __webpack_require__(48);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -11694,7 +13034,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 143 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11705,7 +13045,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = bookData;
 
-var _model = __webpack_require__(47);
+var _model = __webpack_require__(48);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -11736,7 +13076,7 @@ function bookData() {
   */
 
 /***/ }),
-/* 144 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11748,7 +13088,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(145);
+var _controller = __webpack_require__(154);
 
 var ShipmentController = _interopRequireWildcard(_controller);
 
@@ -11780,7 +13120,7 @@ ShipmentRouter.route('/shipments/:cuid').delete(ShipmentController.deleteShipmen
 exports.default = ShipmentRouter;
 
 /***/ }),
-/* 145 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11791,11 +13131,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteShipment = exports.updateOneShipment = exports.getShipmentById = exports.addShipment = exports.getShipment = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -12076,7 +13416,7 @@ var deleteShipment = exports.deleteShipment = function () {
   };
 }();
 
-var _model = __webpack_require__(48);
+var _model = __webpack_require__(49);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12095,7 +13435,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 146 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12106,7 +13446,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = shipmentData;
 
-var _model = __webpack_require__(48);
+var _model = __webpack_require__(49);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12184,7 +13524,7 @@ function shipmentData() {
   */
 
 /***/ }),
-/* 147 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12196,7 +13536,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(148);
+var _controller = __webpack_require__(157);
 
 var SearchController = _interopRequireWildcard(_controller);
 
@@ -12228,7 +13568,7 @@ SearchRouter.route('/searchs/:cuid').delete(SearchController.deleteSearch);
 exports.default = SearchRouter;
 
 /***/ }),
-/* 148 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12239,11 +13579,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteSearch = exports.updateOneSearch = exports.getSearchById = exports.addSearch = exports.getSearch = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -12524,7 +13864,7 @@ var deleteSearch = exports.deleteSearch = function () {
     };
 }();
 
-var _model = __webpack_require__(49);
+var _model = __webpack_require__(50);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12543,7 +13883,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 149 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12554,7 +13894,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = searchData;
 
-var _model = __webpack_require__(49);
+var _model = __webpack_require__(50);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12585,7 +13925,7 @@ function searchData() {
   */
 
 /***/ }),
-/* 150 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12597,7 +13937,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = __webpack_require__(1);
 
-var _controller = __webpack_require__(151);
+var _controller = __webpack_require__(160);
 
 var SocialController = _interopRequireWildcard(_controller);
 
@@ -12629,7 +13969,7 @@ SocialRouter.route('/socials/:cuid').delete(SocialController.deleteSocial);
 exports.default = SocialRouter;
 
 /***/ }),
-/* 151 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12640,11 +13980,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deleteSocial = exports.updateOneSocial = exports.getSocialById = exports.addSocial = exports.getSocial = undefined;
 
-var _regenerator = __webpack_require__(2);
+var _regenerator = __webpack_require__(3);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(3);
+var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
@@ -12925,7 +14265,7 @@ var deleteSocial = exports.deleteSocial = function () {
     };
 }();
 
-var _model = __webpack_require__(50);
+var _model = __webpack_require__(51);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12944,7 +14284,7 @@ var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 152 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12955,7 +14295,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = socialData;
 
-var _model = __webpack_require__(50);
+var _model = __webpack_require__(51);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -12986,34 +14326,34 @@ function socialData() {
   */
 
 /***/ }),
-/* 153 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 154 */
+/* 163 */
 /***/ (function(module, exports) {
 
 module.exports = require("socket.io");
 
 /***/ }),
-/* 155 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(__dirname) {
 
-var _stringify = __webpack_require__(13);
+var _stringify = __webpack_require__(14);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var webpack = __webpack_require__(51);
-var cssnext = __webpack_require__(156);
-var postcssFocus = __webpack_require__(157);
-var postcssReporter = __webpack_require__(158);
+var webpack = __webpack_require__(52);
+var cssnext = __webpack_require__(165);
+var postcssFocus = __webpack_require__(166);
+var postcssReporter = __webpack_require__(167);
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -13093,31 +14433,31 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ }),
-/* 156 */
+/* 165 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-cssnext");
 
 /***/ }),
-/* 157 */
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-focus");
 
 /***/ }),
-/* 158 */
+/* 167 */
 /***/ (function(module, exports) {
 
 module.exports = require("postcss-reporter");
 
 /***/ }),
-/* 159 */
+/* 168 */
 /***/ (function(module, exports) {
 
 module.exports = require("webpack-dev-middleware");
 
 /***/ }),
-/* 160 */
+/* 169 */
 /***/ (function(module, exports) {
 
 module.exports = require("webpack-hot-middleware");

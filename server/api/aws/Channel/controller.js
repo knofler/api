@@ -62,7 +62,7 @@ function insertInputToChannel(channelParams, id) {
 export async function addChannel(req, res) {
   console.log('req in create/channel is :', req.body);
   try {
-    await ML.createChannel(paramsCheck(channelParams,req), (err, channelData) => {
+    await ML.createChannel(paramsCheck(insertInputToChannel(channelParams,req.body.InputId),req), (err, channelData) => {
       if (err) console.log(err, err.stack); // an error occurred
       else console.log(channelData); // successful response
       return res.status(200).send({
@@ -111,5 +111,50 @@ export async function getChannel(req, res) {
   } catch (e) {
     return res.status(400).end(e);
   }
+}
+
+
+/*
+ * START Media Live Channel
+ */
+
+export async function startChannel(req, res) {
+  // console.log('req in startChannel is :', req.body);
+  try {
+    await ML.startChannel({ ChannelId: req.params.ChannelId }, (err, data) => {
+    if (err) console.log(err, err.stack);
+    // an error occurred
+    else console.log(data); // successful response
+    return res.status(200).send({
+      message: data,
+    });
+  });
+  } catch (e) {
+    return res.status(400).end(e);
+  }
+  
+}
+
+/*
+ * STOP Media Live Channel
+ */
+
+export async function stopChannel(req, res) {
+  // console.log('req in startChannel is :', req.body);
+  try {
+    await ML.stopChannel({
+      ChannelId: req.params.ChannelId
+    }, (err, data) => {
+      if (err) console.log(err, err.stack);
+      // an error occurred
+      else console.log(data); // successful response
+      return res.status(200).send({
+        message: data,
+      });
+    });
+  } catch (e) {
+    return res.status(400).end(e);
+  }
+
 }
 

@@ -10,6 +10,10 @@ import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
 const ChannelSchema = new Schema({
+    Arn: {
+        type: 'String',
+        required: false,
+    },
     Name: {
         type: 'String',
         required: false,
@@ -19,6 +23,42 @@ const ChannelSchema = new Schema({
         required: false,
     },
     channelId: {
+        type: 'String',
+        required: false,
+    },
+    InputId: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsOneUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsOneUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsTwoUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsTwoUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsOneUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsOneUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsTwoUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsTwoUsername: {
         type: 'String',
         required: false,
     },

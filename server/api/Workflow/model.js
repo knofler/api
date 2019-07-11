@@ -10,6 +10,10 @@ import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
 const WorkflowSchema = new Schema({
+    channelArn: {
+        type: 'String',
+        required: false,
+    },
     channelName: {
         type: 'String',
         required: false,
@@ -30,6 +34,14 @@ const WorkflowSchema = new Schema({
       type: 'String',
       required: false,
     },
+    AttachedChannels: {
+        type: 'Array',
+        required: false,
+    },
+    inputArn: {
+        type: 'String',
+        required: false,
+    },
     inputClass: {
       type: 'String',
       required: false,
@@ -37,6 +49,14 @@ const WorkflowSchema = new Schema({
     inputType: {
       type: 'String',
       required: false,
+    },
+    SecurityGroups: {
+      type: 'Array',
+      required: false,
+    },
+    State: {
+        type: 'String',
+        required: false,
     },
     destinationsOneIp: {
       type: 'String',
@@ -59,6 +79,38 @@ const WorkflowSchema = new Schema({
         required: false,
     },
     destinationsTwoUrl: {
+        type: 'String',
+        required: false,
+  },
+      destinationsOneSettingsOneUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsOneUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsTwoUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsOneSettingsTwoUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsOneUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsOneUsername: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsTwoUrl: {
+        type: 'String',
+        required: false,
+    },
+    destinationsTwoSettingsTwoUsername: {
         type: 'String',
         required: false,
     },

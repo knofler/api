@@ -10,6 +10,14 @@ import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
 const InputSchema = new Schema({
+    AttachedChannels: {
+        type: 'Array',
+        required: false,
+    },
+    Arn: {
+        type: 'String',
+        required: false,
+    },
     Name: {
         type: 'String',
         required: false,
@@ -55,6 +63,14 @@ const InputSchema = new Schema({
         required: false,
     },
     destinationsTwoUrl: {
+        type: 'String',
+        required: false,
+    },
+    SecurityGroups: {
+        type: 'Array',
+        required: false,
+    },
+    State: {
         type: 'String',
         required: false,
     },

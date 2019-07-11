@@ -69,6 +69,7 @@ import Helmet from 'react-helmet';
 import WorkflowAWSRouter from './api/aws/Workflow/routes';
 import ChannelAWSRouter from './api/aws/Channel/routes';
 import InputAWSRouter from './api/aws/Input/routes';
+import MpChannelAWSRouter from './api/aws/MpChannel/routes';
 
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
@@ -96,6 +97,9 @@ import orderData from './api/Order/dummyData';
 
 import ChannelRouter from './api/Channel/routes';
 import channelData from './api/Channel/dummyData';
+
+import MpchannelRouter from './api/Mpchannel/routes';
+import mpChannelData from './api/Mpchannel/dummyData';
 
 import InputRouter from './api/Input/routes';
 import inputData from './api/Input/dummyData';
@@ -171,12 +175,15 @@ app.use('/api/user', userRouter);
 app.use('/api/aws', WorkflowAWSRouter);
 app.use('/api/aws', ChannelAWSRouter);
 app.use('/api/aws', InputAWSRouter);
+app.use('/api/aws', MpChannelAWSRouter);
 /*
  * API ROUTES
  */
 app.use('/api', WorkflowRouter);
 app.use('/api', ChannelRouter);
 app.use('/api', InputRouter);
+app.use('/api', MpchannelRouter);
+
 
 
 app.use('/api', postRouter);
