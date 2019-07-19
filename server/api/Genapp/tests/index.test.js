@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import { TestMe } from '../index';
+// import { Genapp } from '../index';
 
-describe('<TestMe />', () => {
+describe('<Genapp />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

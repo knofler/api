@@ -25,12 +25,12 @@ export async function getPencil(req, res) {
     })
     .sort('-dateAdded')
     .lean()
-    .exec();
+    .exec()
 
-    return res.status(200).json({ data: doc });
-  } catch (e) {
-     console.error(e);
-     return res.status(400).send(e);
+    return res.status(200).json({data:doc})
+   } catch(e){
+        console.error(e)
+        return res.status(400).send(e)
    }
 }
 
@@ -49,25 +49,25 @@ export async function addPencil(req, res) {
     const sanitizedPencil = new Pencil(req.body);
 
     // Let's sanitize inputs
-    //  sanitizedPencil.item = sanitizeHtml(sanitizedPencil.item);
+     sanitizedPencil.item = sanitizeHtml(sanitizedPencil.item);
     // sanitizedPencil.info = sanitizeHtml(sanitizedPencil.info); --}}
     // sanitizedPencil.created_by = sanitizeHtml(sanitizedPencil.created_by);
     // sanitizedPencil.created_at = sanitizeHtml(sanitizedPencil.created_at);
 
     // Add slug data for specific field
     sanitizedPencil.slug = slug(sanitizedPencil
-        .item.toLowerCase(), { lowercase: true });
+        .item.toLowerCase(), {lowercase: true});
 
     // Add cuid for the model
     sanitizedPencil.cuid = cuid();
 
     // Make asynchronous call to save the model to Database
     const pencil = await Pencil.create(sanitizedPencil);
-    return res.status(201)
+        return res.status(201)
         .json(pencil.toJSON());
-  } catch (e) {
-      console.log(e);
-      return res.status(400).send(e);
+    } catch (e) {
+        console.log(e);
+        return res.status(400).send(e);
     }
 }
 
@@ -80,23 +80,23 @@ export async function addPencil(req, res) {
 
 export async function getPencilById(req, res) {
   try {
-    console.log('cuid is :', req.params.cuid);
+    console.log("cuid is :", req.params.cuid);
     const doc = await Pencil
-        .findOne({
+        .findOne({ 
             // createdBy: req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid,
             // _id: req.params.id
-        })
+            })
         .lean()
-        .exec();
+        .exec()
 
     if (!doc) {
-      return res.status(400).end();
+        return res.status(400).end()
     }
 
-    return res.status(200).json({ data: doc });
-  } catch (e) {
-     return res.status(400).send(e);
+        return res.status(200).json({ data: doc })
+   } catch (e) {
+      return res.status(400).send(e);
    }
 }
 
@@ -112,22 +112,22 @@ export async function updateOnePencil(req, res) {
     const updatedDoc = await Pencil
         .findOneAndUpdate({
             // createdBy: req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid,
             // _id: req.params.id
-        },
+            },
             req.body,
             { new: true }
         )
         .lean()
-        .exec();
+        .exec()
 
     if (!updatedDoc) {
-      return res.status(400).end();
+        return res.status(400).end()
     }
-    return res.status(200).json({ data: updatedDoc });
-  } catch (e) {
-     console.error(e);
-     return res.status(400).send(e);
+        return res.status(200).json({ data: updatedDoc })
+   } catch (e) {
+       console.error(e);
+       return res.status(400).send(e);
    }
 }
 
@@ -144,16 +144,16 @@ export async function deletePencil(req, res) {
     const removed = await Pencil
         .findOneAndRemove({
            // createdBy:req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid
            // _id:req.params.id,
-        });
-    if (!removed) {
-      return res.status(400).end();
+        })
+    if(!removed){
+        return res.status(400).end()
     }
-    return res.status(200)
-        .json({ data: removed });
-  } catch (e) {
-     console.error(e);
-     return res.status(400).send(e);
+     return res.status(200)
+        .json({data:removed})
+   } catch (e) {
+       console.error(e);
+       return res.status(400).send(e);
    }
 }

@@ -25,13 +25,13 @@ export async function getBook(req, res) {
     })
     .sort('-dateAdded')
     .lean()
-    .exec();
+    .exec()
 
-    return res.status(200).json({ data: doc });
-  } catch (e) {
-    console.error(e);
-    return res.status(400).send(e);
-  }
+    return res.status(200).json({data:doc})
+   } catch(e){
+        console.error(e)
+        return res.status(400).send(e)
+   }
 }
 
 /**
@@ -49,26 +49,26 @@ export async function addBook(req, res) {
     const sanitizedBook = new Book(req.body);
 
     // Let's sanitize inputs
-    sanitizedBook.item = sanitizeHtml(sanitizedBook.item);
+     sanitizedBook.item = sanitizeHtml(sanitizedBook.item);
     // sanitizedBook.info = sanitizeHtml(sanitizedBook.info); --}}
     // sanitizedBook.created_by = sanitizeHtml(sanitizedBook.created_by);
     // sanitizedBook.created_at = sanitizeHtml(sanitizedBook.created_at);
 
     // Add slug data for specific field
     sanitizedBook.slug = slug(sanitizedBook
-        .item.toLowerCase(), { lowercase: true });
+        .item.toLowerCase(), {lowercase: true});
 
     // Add cuid for the model
     sanitizedBook.cuid = cuid();
 
     // Make asynchronous call to save the model to Database
     const book = await Book.create(sanitizedBook);
-    return res.status(201)
+        return res.status(201)
         .json(book.toJSON());
-  } catch (e) {
-    console.log(e);
-    return res.status(400).send(e);
-  }
+    } catch (e) {
+        console.log(e);
+        return res.status(400).send(e);
+    }
 }
 
 /**
@@ -80,24 +80,24 @@ export async function addBook(req, res) {
 
 export async function getBookById(req, res) {
   try {
-    console.log('cuid is :', req.params.cuid);
+    console.log("cuid is :", req.params.cuid);
     const doc = await Book
-        .findOne({
+        .findOne({ 
             // createdBy: req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid,
             // _id: req.params.id
-        })
+            })
         .lean()
-        .exec();
+        .exec()
 
     if (!doc) {
-      return res.status(400).end();
+        return res.status(400).end()
     }
 
-    return res.status(200).json({ data: doc });
-  } catch (e) {
-    return res.status(400).send(e);
-  }
+        return res.status(200).json({ data: doc })
+   } catch (e) {
+      return res.status(400).send(e);
+   }
 }
 
 /**
@@ -112,23 +112,23 @@ export async function updateOneBook(req, res) {
     const updatedDoc = await Book
         .findOneAndUpdate({
             // createdBy: req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid,
             // _id: req.params.id
-        },
+            },
             req.body,
             { new: true }
         )
         .lean()
-        .exec();
+        .exec()
 
     if (!updatedDoc) {
-      return res.status(400).end();
+        return res.status(400).end()
     }
-    return res.status(200).json({ data: updatedDoc });
-  } catch (e) {
-    console.error(e);
-    return res.status(400).send(e);
-  }
+        return res.status(200).json({ data: updatedDoc })
+   } catch (e) {
+       console.error(e);
+       return res.status(400).send(e);
+   }
 }
 
 
@@ -144,16 +144,16 @@ export async function deleteBook(req, res) {
     const removed = await Book
         .findOneAndRemove({
            // createdBy:req.user._id,
-          cuid: req.params.cuid,
+            cuid: req.params.cuid
            // _id:req.params.id,
-        });
-    if (!removed) {
-      return res.status(400).end();
+        })
+    if(!removed){
+        return res.status(400).end()
     }
-    return res.status(200)
-        .json({ data: removed });
-  } catch (e) {
-    console.error(e);
-    return res.status(400).send(e);
-  }
+     return res.status(200)
+        .json({data:removed})
+   } catch (e) {
+       console.error(e);
+       return res.status(400).send(e);
+   }
 }

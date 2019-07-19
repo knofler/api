@@ -71,6 +71,19 @@ import ChannelAWSRouter from './api/aws/Channel/routes';
 import InputAWSRouter from './api/aws/Input/routes';
 import MpChannelAWSRouter from './api/aws/MpChannel/routes';
 
+/******
+ * ***********
+ * ***********
+ * CLI GENERATED API INSERTION
+ * ***********
+ * ***********
+ ******/
+//Generated App Test with `Genapp`
+import GenappAWSRouter from './api/aws/Genapp/routes';
+import GenappRouter from './api/Genapp/routes';
+import genappData from './api/Genapp/dummyData';
+
+
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 
@@ -128,6 +141,7 @@ import serverConfig from './config';
 
 
 
+
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;
 
@@ -141,6 +155,7 @@ if (process.env.NODE_ENV !== 'test') {
       locationData();
       orderData();
       channelData();
+      genappData();
       workflowData();
       inputData();
       pencilData();
@@ -157,6 +172,8 @@ if (process.env.NODE_ENV !== 'test') {
     }
   });
 }
+
+
 
 // Apply body Parser and server public assets and routes
 app.use(compression());
@@ -183,6 +200,23 @@ app.use('/api', WorkflowRouter);
 app.use('/api', ChannelRouter);
 app.use('/api', InputRouter);
 app.use('/api', MpchannelRouter);
+
+
+/******
+ * ***********
+ * ***********
+ * CLI GENERATED API INSERTION
+ * ***********
+ * ***********
+ ******/
+/*
+ * AWS SDK Resource interaction
+ */
+app.use('/api/aws', GenappAWSRouter);
+/*
+ * API ROUTES
+ */
+app.use('/api', GenappRouter);
 
 
 

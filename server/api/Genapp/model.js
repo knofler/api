@@ -1,7 +1,7 @@
 /*
-* TestMe Model
+* Genapp Model
 *
-* This contains defalut TestMe model.
+* This contains defalut Genapp model.
 */
 
 
@@ -9,7 +9,7 @@ import mongoose from 'mongoose';
 import { strictEqual } from 'assert';
 const Schema = mongoose.Schema;
 
-const TestMeSchema = new Schema({
+const GenappSchema = new Schema({
     item: {
         type: 'String',
         required: false,
@@ -37,4 +37,4 @@ const TestMeSchema = new Schema({
     },
 });
 
-export default mongoose.model('TestMe', TestMeSchema);
+export default mongoose.model('Genapp', GenappSchema);
