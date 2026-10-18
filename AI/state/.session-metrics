@@ -1,9 +1,9 @@
-started=2026-08-04T02:37:23Z
-started_epoch=1785811043
-expires=2026-08-04T10:37:23Z
-expires_epoch=1785839843
+started=2026-10-02T01:30:47Z
+started_epoch=1790904647
+expires=2026-10-02T09:30:47Z
+expires_epoch=1790933447
 duration_minutes=480
 max_weighted_actions=800
-action_count=18
-weighted_actions=17.0
+action_count=1
+weighted_actions=
 warnings_sent=
